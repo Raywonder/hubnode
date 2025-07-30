@@ -1,0 +1,7 @@
+{
+  "name": "my-app",
+  "user": "username",
+  "createdAt": "2025-07-30T15:00:00.000Z",
+  "env": "dev",
+  "version": "0.1.0"
+}

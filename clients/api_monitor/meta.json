@@ -1,0 +1,8 @@
+{
+  "name": "API Monitor",
+  "version": "0.1.0",
+  "author": "Dominique Stansberry",
+  "platform": ["win32", "darwin"],
+  "lastUpdated": "2025-07-30T12:00:00Z",
+  "autoUpdate": true
+}
