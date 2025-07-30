@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# dotenv environment files
+.env
+.env.*
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/

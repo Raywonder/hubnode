@@ -1,0 +1,16 @@
+
+{
+  "name": "hubnode",
+  "version": "0.1.0",
+  "description": "Modular full-stack app scaffold",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "license": "MIT"
+}
