@@ -1,18 +1,15 @@
 # HubNode
 
-A modular full-stack Node.js app scaffold for building decentralized hub apps — including API, AI, social, and utility modules.
+A cross-platform service hub combining social, media, AI, and WireGuard integration. Built with accessibility and modular deployment in mind.
 
-## Structure
+## Getting Started
 
-/client - Frontend (e.g. React, Vue)
-/server - Backend server (Node.js)
-/api - Modular API endpoints
-/auth - Auth system and middleware
-/social - Social features (feed, posts, comments)
-/media - File/media handling
-/ai - AI/ML integrations
-/ssh - SSH & remote commands
-/utils - Shared utilities
-/docs - Documentation
-/scripts - CLI scripts
-/config - App-wide config
+1. Copy `.env.example` to `.env` in the root and `backend/`, `frontend/`, and `docker/` folders.
+2. Run `docker-compose up --build` from the `docker/` directory.
+
+## Stack
+- Node.js / Express (Backend)
+- Next.js (Frontend)
+- Redis, PostgreSQL
+- WireGuard integration (coming soon)
+- Jellyfin API support (coming soon)

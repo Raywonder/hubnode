@@ -1,0 +1,4 @@
+# Web App (Next.js or other)
+NODE_ENV=development
+PORT=3000
+NEXT_PUBLIC_API_URL=http://localhost:3001
