@@ -31,6 +31,7 @@ cd "$DEST_DIR" || exit 1
 echo "[*] Git add/commit/push"
 git add .
 git commit -m "Synced Claude AI artifact on $(date)"
-git push origin main
+git push origin master
+
 
 echo "[?] Done. All files synced and pushed."
