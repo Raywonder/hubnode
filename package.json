@@ -1,0 +1,53 @@
+{
+  "name": "media-player",
+  "version": "1.0.0",
+  "description": "Modern media player built with Electron and React",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run dev-react\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev-react": "react-scripts start",
+    "build": "react-scripts build",
+    "pack": "electron-builder",
+    "dist": "npm run build && electron-builder"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "media",
+    "player",
+    "music"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "./",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.2",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "electron-updater": "^6.6.2",
+    "file-type": "^18.5.0",
+    "music-metadata": "^8.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "semver": "^7.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
