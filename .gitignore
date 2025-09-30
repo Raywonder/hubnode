@@ -1,0 +1,22 @@
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# Build directories
+dist/
+build/
+
+# Storage and data
+storage/
+100/
+
+# Embedded git repositories (should be submodules)
+ai/.git
+backend/whmcs-module-repo/whmcs-module-repo/.git
