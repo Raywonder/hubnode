@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyParty Admin API Documentation</title>
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="/static/docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn">← Back to API Dashboard</a>
+
+        <div class="header">
+            <h1>📁 CopyParty Admin API</h1>
+            <p>Auto-generated API Reference</p>
+        </div>
+
+        <div class="update-info">
+            🔄 Last updated: 2025-10-19 23:28:01 UTC<br>
+            Auto-refreshes every 5 minutes • Updates every 1 minute
+        </div>
+
+        <div class="card">
+            <h2>Base URLs</h2>
+            <ul style="margin-left: 20px; color: #666;">
+                <li><code>https://api.devinecreations.net/api/copyparty</code></li>
+                <li><code>https://api.devine-creations.com/api/copyparty</code></li>
+                <li><code>https://api.tetoeehoward.com/api/copyparty</code></li>
+                <li><code>https://api.tappedin.fm/api/copyparty</code></li>
+            </ul>
+
+            <h2>File Management & Sharing</h2>
+            <p>User-scoped file operations, uploads, downloads, and public/private sharing.</p>
+        </div>
+
+        <div class="card">
+            <h2>Available Endpoints</h2>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> API documentation
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/admin/reload</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Reload CopyParty configuration
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/admin/scan</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Rescan all volumes
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/admin/stats</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get CopyParty statistics
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/files/copy</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Copy file or directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span> <span class="method delete">DELETE</span>
+                    <span class="path">/api/copyparty/files/delete</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Delete file or directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/files/download</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Download a file
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/files/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List files in a directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/files/mkdir</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Create directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/files/move</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Move/rename file or directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/files/tree</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List directory tree recursively
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/files/upload</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Upload a file
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/health</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Check if CopyParty is running
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/info</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get API information
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart the CopyParty Admin API service
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/search</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Search for files
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/search/recent</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get recent uploads
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/share/<share_token></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Public endpoint to access shared files/folders
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/share/<share_token>/download/<filename></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Download a specific file from a shared directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/copy</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Copy file or directory in user's home
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span> <span class="method delete">DELETE</span>
+                    <span class="path">/api/copyparty/user/<username>/delete</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Delete file or directory from user's home
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/user/<username>/download</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Download file from user's home directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/fix-permissions</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Fix permissions for user's home directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/user/<username>/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List files in user's home directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/mkdir</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Create directory in user's home
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/move</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Move/rename file or directory in user's home
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span> <span class="method delete">DELETE</span>
+                    <span class="path">/api/copyparty/user/<username>/share/delete</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Delete a share completely
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/user/<username>/share/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all shares for a user
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/share/private</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Make a previously shared file/folder private again
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/share/public</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Make a file or folder publicly accessible via share link
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method put">PUT</span> <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/update</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Update/replace existing file in user's home
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/copyparty/user/<username>/upload</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Upload file to user's home directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/users/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List configured users
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/copyparty/volumes/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List configured volumes
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="text-align: center; color: white; margin-top: 40px; opacity: 0.8;">
+            <p>Auto-generated from copyparty-admin.py</p>
+        </div>
+    </div>
+</body>
+</html>

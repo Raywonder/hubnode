@@ -1,0 +1,74 @@
+{
+  "name": "CopyParty Secure Connection Configuration",
+  "version": "2.0.0",
+  "last_updated": "2025-09-27T21:57:00Z",
+  "description": "Secure HTTPS connection configuration for Mac Claude Code",
+  
+  "connections": {
+    "primary": {
+      "name": "RayWonderIs.me Files",
+      "url": "https://files.raywonderis.me",
+      "webdav": "https://files.raywonderis.me/dav/",
+      "api": "https://files.raywonderis.me/api/",
+      "credentials": {
+        "admin": "admin:hub-node-api-2024",
+        "dom": "dom:composr-import-2024",
+        "audioportrait": "audioportrait:audio-portrait-api-2025"
+      }
+    },
+    "local_proxy": {
+      "name": "Local Server Proxy",
+      "url": "http://127.0.0.1:8081",
+      "webdav": "http://127.0.0.1:8081/dav/",
+      "api": "http://127.0.0.1:8081/api/",
+      "auth_required": false,
+      "note": "Direct local access without authentication"
+    },
+    "claude_sync": {
+      "name": "Claude Local Sync API",
+      "url": "http://127.0.0.1:8082",
+      "health": "http://127.0.0.1:8082/health",
+      "sync_status": "http://127.0.0.1:8082/sync/status",
+      "upload": "http://127.0.0.1:8082/sync/upload",
+      "auth_required": false,
+      "note": "Claude Code local file sync service"
+    },
+    "domains": {
+      "raywonderis": "https://files.raywonderis.me",
+      "devinecreations": "https://files.devinecreations.net", 
+      "tappedin": "https://files.tappedin.fm",
+      "tetoeehoward": "https://files.tetoeehoward.com",
+      "walterharper": "https://files.walterharper.com"
+    }
+  },
+  
+  "upload_paths": {
+    "audio_portrait_dist": "/audio-portrait-dist/",
+    "composr_raywonderis_apps": "/composr-raywonderis/website_specific/apps/",
+    "hubnode_clients": "/hubnode-clients/",
+    "hubnode_api": "/hubnode-api/",
+    "beta_site": "/composr-raywonderis/uploads/beta/"
+  },
+  
+  "mac_webdav_mount": {
+    "command": "mount -t webdav https://files.raywonderis.me/dav/ ~/CopyParty",
+    "finder": "Go > Connect to Server > https://files.raywonderis.me/dav/",
+    "credentials_required": true
+  },
+  
+  "ssl_status": {
+    "files.raywonderis.me": "✅ Valid wildcard certificate",
+    "files.devinecreations.net": "✅ Valid certificate", 
+    "files.tappedin.fm": "✅ Valid certificate",
+    "files.tetoeehoward.com": "✅ Valid certificate",
+    "files.walterharper.com": "✅ Valid certificate"
+  },
+  
+  "security": {
+    "no_exposed_ports": true,
+    "https_only": true,
+    "hsts_enabled": true,
+    "max_upload_size": "2GB",
+    "websocket_support": true
+  }
+}

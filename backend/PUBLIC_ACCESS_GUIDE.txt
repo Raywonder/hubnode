@@ -1,0 +1,102 @@
+# Public Access Guide - CopyParty File Management System
+
+## Public Read-Only Access
+Username: public
+Password: public-download-2025
+Access Level: Read-Only (Download Only)
+
+## Public Access URLs
+Primary: http://64.20.46.178:3923
+Alternative: https://files.devinecreations.net (when available)
+
+## Publicly Accessible Directories
+
+### Audio Portrait Downloads
+/composr-devinecreations/apps/audio-portrait/   # DevineCreations.net downloads
+/composr-raywonderis/apps/audio-portrait/       # RayWonderIs.Me downloads
+/audio-portrait-dist/                           # Direct distribution access
+
+### Composr Public Downloads
+/composr-devinecreations/uploads/               # DevineCreations.net public files
+/composr-raywonderis/uploads/                   # RayWonderIs.Me public files
+/composr-devinecreations/galleries/             # Photo galleries
+/composr-raywonderis/galleries/                 # Photo galleries
+
+### WordPress Media (Read-Only)
+/wp-tappedin/uploads/                           # TappedIn.fm media
+/wp-tetoeehoward/uploads/                       # TetoeeHoward.com media
+/wp-walterharper/uploads/                       # WalterHarper.com media
+
+### Shared Resources
+/shared/                                        # Shared public files
+/downloads-devinecr/                            # Public downloads
+
+## Direct Web Access (No Authentication Required)
+
+### Audio Portrait Downloads
+https://devinecreations.net/uploads/website_specific/apps/audio-portrait/
+https://raywonderis.me/uploads/website_specific/apps/audio-portrait/
+
+### API Downloads (Direct Links)
+https://api.devinecreations.net/api/audio-portrait/download/mac
+https://api.devinecreations.net/api/audio-portrait/download/mac-arm64
+https://api.devinecreations.net/api/audio-portrait/download/windows
+
+### Website Public Areas
+https://devinecreations.net/uploads/
+https://raywonderis.me/uploads/
+https://tappedin.fm/wp-content/uploads/
+https://tetoeehoward.com/wp-content/uploads/
+https://walterharper.com/wp-content/uploads/
+
+## Available Files
+
+### Audio Portrait (Latest: v0.1.0)
+- Audio Portrait-0.1.0.dmg (Universal Mac - 120MB)
+- Audio Portrait-0.1.0-arm64.dmg (Apple Silicon - 119MB)  
+- Audio Portrait 0.1.0.exe (Windows - 198MB)
+
+### File Access Methods
+1. **Direct Web Download**: Click links above (no login required)
+2. **CopyParty Browse**: Use public:public-download-2025 to browse all files
+3. **API Downloads**: Use API endpoints for programmatic access
+
+## Usage Instructions
+
+### Method 1: Direct Download (Easiest)
+1. Visit https://devinecreations.net/uploads/website_specific/apps/audio-portrait/
+2. Click on desired file to download
+3. No authentication required
+
+### Method 2: CopyParty Browse
+1. Go to http://64.20.46.178:3923
+2. Login: public / public-download-2025
+3. Browse directories and download files
+4. Read-only access (cannot upload)
+
+### Method 3: API Access
+1. Use API endpoints for direct downloads
+2. Suitable for applications and automated downloads
+3. Example: curl https://api.devinecreations.net/api/audio-portrait/download/mac
+
+## File Structure Guide
+/composr-*/uploads/ = Public downloads for each site
+/composr-*/apps/ = Application downloads
+/wp-*/uploads/ = WordPress media files
+/audio-portrait-dist/ = Official distribution files
+/shared/ = Community shared resources
+
+## Support & Information
+- Main Site: https://devinecreations.net
+- Technical Support: Available through website contact forms
+- File Issues: Use CopyParty interface to report problems
+
+## Notes for Public Users
+- All downloads are free and publicly accessible
+- Files are scanned for security
+- Latest versions always available via API endpoints
+- Multiple download mirrors for reliability
+- Mobile-friendly access via web interfaces
+
+Generated: 2025-09-27
+System Administrator: DevineCreations Network

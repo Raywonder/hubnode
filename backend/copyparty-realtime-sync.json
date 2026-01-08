@@ -1,0 +1,200 @@
+{
+  "name": "CopyParty Real-time Sync Configuration",
+  "version": "1.0.0",
+  "description": "Real-time bidirectional sync for all CopyParty paths across all platforms (Mac, Windows, Linux)",
+  "server": {
+    "internal_host": "127.0.0.1",
+    "internal_port": 3924,
+    "public_urls": {
+      "raywonderis": "https://files.raywonderis.me",
+      "devinecreations": "https://files.devinecreations.net", 
+      "tappedin": "https://files.tappedin.fm",
+      "tetoeehoward": "https://files.tetoeehoward.com",
+      "walterharper": "https://files.walterharper.com"
+    },
+    "claude_local_url": "http://127.0.0.1:8082"
+  },
+  "auth": {
+    "admin": {
+      "username": "admin",
+      "password": "hub-node-api-2024",
+      "permissions": "rwm"
+    },
+    "users": {
+      "tappedin": {
+        "username": "tappedin", 
+        "password": "tappedin-uploads-2024",
+        "permissions": "rwm"
+      },
+      "dom": {
+        "username": "dom",
+        "password": "composr-import-2024", 
+        "permissions": "rwm"
+      },
+      "devinecr": {
+        "username": "devinecr",
+        "password": "devinecreat-files-2024",
+        "permissions": "rwm"
+      },
+      "tetoeehoward": {
+        "username": "tetoeehoward",
+        "password": "tetoee-files-2024",
+        "permissions": "rwm"
+      },
+      "wharper": {
+        "username": "wharper",
+        "password": "walter-files-2024",
+        "permissions": "rwm"
+      },
+      "audioportrait": {
+        "username": "audioportrait",
+        "password": "audio-portrait-api-2025",
+        "permissions": "rwm"
+      },
+      "composer": {
+        "username": "composer",
+        "password": "composr-manage-2025",
+        "permissions": "rwm"
+      },
+      "wordpress": {
+        "username": "wordpress",
+        "password": "wp-manage-2025",
+        "permissions": "rwm"
+      },
+      "public": {
+        "username": "public",
+        "password": "public-download-2025",
+        "permissions": "r"
+      }
+    }
+  },
+  "sync_paths": {
+    "composr_sites": {
+      "raywonderis_uploads": "/composr-raywonderis/uploads",
+      "raywonderis_website_specific": "/composr-raywonderis/website_specific",
+      "raywonderis_apps": "/composr-raywonderis/website_specific/apps",
+      "raywonderis_audio_portrait": "/composr-raywonderis/apps/audio-portrait",
+      "raywonderis_filedump": "/composr-raywonderis/filedump",
+      "raywonderis_attachments": "/composr-raywonderis/attachments",
+      "raywonderis_galleries": "/composr-raywonderis/galleries",
+      "raywonderis_incoming": "/incoming-raywonderis",
+      "devinecreations_uploads": "/composr-devinecreations/uploads",
+      "devinecreations_website_specific": "/composr-devinecreations/website_specific",
+      "devinecreations_apps": "/composr-devinecreations/website_specific/apps",
+      "devinecreations_audio_portrait": "/composr-devinecreations/apps/audio-portrait",
+      "devinecreations_filedump": "/composr-devinecreations/filedump",
+      "devinecreations_attachments": "/composr-devinecreations/attachments",
+      "devinecreations_galleries": "/composr-devinecreations/galleries",
+      "devinecreations_incoming": "/incoming-devinecreations"
+    },
+    "wordpress_sites": {
+      "tappedin_uploads": "/wp-tappedin/uploads",
+      "tappedin_podcast_submissions": "/wp-tappedin/podcast-submissions",
+      "tappedin_incoming": "/incoming-tappedin",
+      "tetoeehoward_uploads": "/wp-tetoeehoward/uploads",
+      "walterharper_uploads": "/wp-walterharper/uploads"
+    },
+    "applications": {
+      "apps_tappedin": "/apps-tappedin",
+      "apps_devinecr": "/apps-devinecr", 
+      "apps_dom": "/apps-dom",
+      "audio_portrait_dev": "/audio-portrait-dev",
+      "audio_portrait_dist": "/audio-portrait-dist"
+    },
+    "api_system": {
+      "hubnode_clients": "/hubnode-clients",
+      "hubnode_api": "/hubnode-api",
+      "hubnode_backend": "/hubnode-backend"
+    },
+    "whmcs": {
+      "whmcs_devinecr": "/whmcs-devinecr"
+    },
+    "user_directories": {
+      "root_tappedin": "/root-tappedin",
+      "root_devinecr": "/root-devinecr",
+      "root_dom": "/root-dom",
+      "root_tetoeehoward": "/root-tetoeehoward", 
+      "root_wharper": "/root-wharper"
+    },
+    "shared_storage": {
+      "shared": "/shared",
+      "downloads_devinecr": "/downloads-devinecr",
+      "Downloads_devinecr": "/Downloads-devinecr",
+      "attachments_devinecr": "/attachments-devinecr",
+      "Attachments_devinecr": "/Attachments-devinecr"
+    }
+  },
+  "api_integration": {
+    "audio_portrait_api": {
+      "url": "http://64.20.46.178:5001",
+      "health_endpoint": "/health",
+      "upload_endpoint": "/upload",
+      "download_endpoint": "/download"
+    },
+    "local_claude_api": {
+      "port": 3923,
+      "upload_notifications": true,
+      "watch_directories": true,
+      "auto_sync": true
+    }
+  },
+  "client_config": {
+    "platforms": ["Mac", "Windows", "Linux"],
+    "sync_methods": {
+      "webdav": {
+        "urls": {
+          "raywonderis": "https://files.raywonderis.me/dav/",
+          "devinecreations": "https://files.devinecreations.net/dav/",
+          "tappedin": "https://files.tappedin.fm/dav/",
+          "tetoeehoward": "https://files.tetoeehoward.com/dav/",
+          "walterharper": "https://files.walterharper.com/dav/",
+          "local": "http://127.0.0.1:8081/dav/"
+        },
+        "description": "WebDAV mount for file system integration"
+      },
+      "rsync": {
+        "enabled": true,
+        "ssh_support": true,
+        "description": "Rsync for efficient incremental sync"
+      },
+      "rest_api": {
+        "urls": {
+          "raywonderis": "https://files.raywonderis.me/api/",
+          "devinecreations": "https://files.devinecreations.net/api/",
+          "tappedin": "https://files.tappedin.fm/api/",
+          "tetoeehoward": "https://files.tetoeehoward.com/api/",
+          "walterharper": "https://files.walterharper.com/api/",
+          "local": "http://127.0.0.1:8081/api/"
+        },
+        "description": "REST API for programmatic access"
+      }
+    },
+    "real_time_features": {
+      "file_watching": true,
+      "instant_upload": true,
+      "conflict_resolution": "server_wins",
+      "notifications": true,
+      "progress_tracking": true
+    }
+  },
+  "monitoring": {
+    "log_location": "/var/log/copyparty-sync.log",
+    "metrics_endpoint": "http://64.20.46.178:3923/metrics",
+    "health_checks": true,
+    "alerts": {
+      "sync_failures": true,
+      "connection_issues": true,
+      "space_warnings": true
+    }
+  },
+  "automation": {
+    "auto_restart": true,
+    "backup_on_change": false,
+    "compress_transfers": true,
+    "bandwidth_limiting": false,
+    "scheduling": {
+      "full_sync": "daily at 2:00 AM",
+      "incremental": "continuous"
+    }
+  }
+}

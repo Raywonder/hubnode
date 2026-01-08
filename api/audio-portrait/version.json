@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "build": 1,
+  "release_date": "2025-09-27",
+  "release_notes": "Initial release with license management, auto-update support, and API integration",
+  "mandatory": false,
+  "platforms": {
+    "mac": {
+      "filename": "Audio Portrait-0.1.0.dmg",
+      "min_os": "10.14",
+      "size": 120194794
+    },
+    "mac-arm64": {
+      "filename": "Audio Portrait-0.1.0-arm64.dmg",
+      "min_os": "11.0",
+      "size": 119927740
+    },
+    "windows": {
+      "filename": "Audio Portrait 0.1.0.exe", 
+      "min_os": "Windows 10",
+      "size": 198524995
+    }
+  }
+}

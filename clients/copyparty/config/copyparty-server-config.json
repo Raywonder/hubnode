@@ -1,0 +1,170 @@
+{
+  "copyparty_ui_universal_config": {
+    "version": "2025-09-30",
+    "last_updated": "2025-09-30T00:43:00Z",
+    "description": "Universal CopyParty UI configuration for all desktop apps",
+
+    "server_endpoints": {
+      "primary": {
+        "domain": "files.raywonderis.me",
+        "url": "https://files.raywonderis.me",
+        "protocol": "https",
+        "port": 443
+      },
+      "direct_access": {
+        "ip": "64.20.46.178",
+        "ports": {
+          "primary": {
+            "port": 3924,
+            "url": "http://64.20.46.178:3924",
+            "description": "Main CopyParty service"
+          },
+          "secondary": {
+            "port": 3923,
+            "url": "http://64.20.46.178:3923",
+            "description": "Secondary CopyParty service"
+          }
+        }
+      },
+      "alternative_domains": [
+        {
+          "domain": "files.devinecreations.net",
+          "url": "https://files.devinecreations.net"
+        },
+        {
+          "domain": "files.tetoeehoward.com",
+          "url": "https://files.tetoeehoward.com"
+        },
+        {
+          "domain": "files.walterharper.com",
+          "url": "https://files.walterharper.com"
+        },
+        {
+          "domain": "files.tappedin.fm",
+          "url": "https://files.tappedin.fm"
+        }
+      ]
+    },
+
+    "user_profiles": {
+      "admin": {
+        "username": "admin",
+        "password": "hub-node-api-2024",
+        "access_level": "full_system",
+        "default_paths": ["/shared/", "/dom-home/", "/devinecr-home/"],
+        "description": "System administrator access"
+      },
+      "dom": {
+        "username": "dom",
+        "password": "composr-import-2024",
+        "access_level": "user",
+        "default_paths": ["/dom-home/", "/apps-dom/", "/public/dom-uploads/"],
+        "home_directory": "/home/dom"
+      },
+      "devinecr": {
+        "username": "devinecr",
+        "password": "devinecreat-files-2024",
+        "access_level": "system_admin",
+        "default_paths": ["/devinecr-home/", "/apps-devinecr/", "/shared/", "/patchmate/"],
+        "home_directory": "/home/devinecr"
+      },
+      "tappedin": {
+        "username": "tappedin",
+        "password": "tappedin-uploads-2024",
+        "access_level": "user",
+        "default_paths": ["/tappedin-home/", "/apps-tappedin/", "/public/tappedin-uploads/"],
+        "home_directory": "/home/tappedin"
+      },
+      "tetoeehoward": {
+        "username": "tetoeehoward",
+        "password": "tetoee-files-2024",
+        "access_level": "user",
+        "default_paths": ["/tetoeehoward-home/", "/apps-tetoeehoward/", "/public/tetoeehoward-uploads/"],
+        "home_directory": "/home/tetoeehoward",
+        "special_paths": {
+          "rodemoter_uploads": "/tetoeehoward-home/apps/Rodemoter/"
+        }
+      },
+      "wharper": {
+        "username": "wharper",
+        "password": "walter-files-2024",
+        "access_level": "user",
+        "default_paths": ["/wharper-home/", "/apps-wharper/", "/public/wharper-uploads/"],
+        "home_directory": "/home/wharper"
+      }
+    },
+
+    "connection_management": {
+      "connection_timeout_ms": 30000,
+      "retry_attempts": 3,
+      "retry_delay_ms": 2000,
+      "health_check_interval_ms": 60000,
+      "fallback_strategy": "ip_then_alt_domains",
+      "health_check_endpoints": [
+        "https://files.raywonderis.me/health",
+        "http://64.20.46.178:3924/health",
+        "http://64.20.46.178:3923/health"
+      ]
+    },
+
+    "upload_settings": {
+      "chunk_size_mb": 10,
+      "concurrent_uploads": 3,
+      "max_file_size_gb": 2,
+      "resume_broken_uploads": true,
+      "verify_uploads": true,
+      "compress_before_upload": false
+    },
+
+    "ui_settings": {
+      "auto_refresh_interval_seconds": 30,
+      "show_hidden_files": false,
+      "default_view": "list",
+      "sort_by": "name",
+      "sort_order": "ascending",
+      "show_file_previews": true,
+      "theme": "auto"
+    },
+
+    "special_paths": {
+      "rodemoter_app": {
+        "upload_path": "/tetoeehoward-home/apps/Rodemoter/",
+        "public_path": "/home/devinecr/public_html/downloads/Rodemoter/",
+        "description": "Rodemoter application upload destinations"
+      },
+      "shared_resources": {
+        "path": "/shared/",
+        "description": "Shared collaborative workspace"
+      },
+      "audio_portrait_api": {
+        "path": "/audio-portrait-dist/",
+        "description": "Audio Portrait API uploads"
+      }
+    },
+
+    "integration": {
+      "claude_helper_script": "/home/claude-copyparty-helper.sh",
+      "auto_memory_script": "/home/claude-auto-memory.sh",
+      "credentials_database": "/home/COPYPARTY_CREDENTIALS.json",
+      "memory_instructions": "/home/CLAUDE_MEMORY_INSTRUCTIONS.md",
+      "connection_protocol": "/home/CLAUDE_CONNECTION_PROTOCOL.md"
+    },
+
+    "troubleshooting": {
+      "connection_issues": {
+        "check_services": "systemctl status copyparty copyparty-3923",
+        "check_ports": "netstat -tulnp | grep '392[34]'",
+        "test_connectivity": "curl -s -I http://64.20.46.178:3924/"
+      },
+      "authentication_issues": {
+        "verify_credentials": "/home/claude-copyparty-helper.sh user [username]",
+        "test_admin_access": "curl -s -u admin:hub-node-api-2024 https://files.raywonderis.me/"
+      },
+      "upload_issues": {
+        "check_path_permissions": "ls -la [upload_path]",
+        "verify_disk_space": "df -h",
+        "test_small_upload": "echo 'test' | curl -u [user]:[pass] -F 'file=@-' [endpoint]/[path]/"
+      }
+    }
+  }
+}

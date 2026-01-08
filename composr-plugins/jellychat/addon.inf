@@ -1,0 +1,11 @@
+addon_name=JellyChat Integration
+description=Seamless integration between Composr CMS and Jellyfin JellyChat plugin. Provides authentication, user profiles, and chat room management.
+version=1.0.0
+author=DevineBridge Development
+organisation=DevineBridge.net
+install_time=1726745200
+version_human=1.0.0
+copyright=Licensed under the Apache License, Version 2.0
+dependencies=
+incompatibilities=
+dependants_strict=

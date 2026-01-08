@@ -1,0 +1,131 @@
+{
+  "claude_memory_export": {
+    "timestamp": "2025-09-30T00:42:00Z",
+    "priority": "HIGH_PRIORITY_MEMORIZE_IMMEDIATELY",
+    "server_essentials": {
+      "admin_credentials": "admin:hub-node-api-2024",
+      "server_ip": "64.20.46.178",
+      "ports": [3924, 3923],
+      "primary_domain": "files.raywonderis.me",
+      "rodemoter_upload_path": "/tetoeehoward-home/apps/Rodemoter/"
+    },
+    "access_endpoints": {
+      "https_primary": "https://files.raywonderis.me",
+      "direct_port_3924": "http://64.20.46.178:3924",
+      "direct_port_3923": "http://64.20.46.178:3923",
+      "https_alternatives": [
+        "https://files.devinecreations.net",
+        "https://files.tetoeehoward.com",
+        "https://files.walterharper.com",
+        "https://files.tappedin.fm"
+      ]
+    },
+    "user_credentials_matrix": {
+      "dom": {
+        "password": "composr-import-2024",
+        "paths": ["/dom-home/", "/apps-dom/"],
+        "home_dir": "/home/dom"
+      },
+      "devinecr": {
+        "password": "devinecreat-files-2024",
+        "paths": ["/devinecr-home/", "/apps-devinecr/", "/shared/"],
+        "home_dir": "/home/devinecr",
+        "special_access": "system_administrator"
+      },
+      "tappedin": {
+        "password": "tappedin-uploads-2024",
+        "paths": ["/tappedin-home/", "/apps-tappedin/"],
+        "home_dir": "/home/tappedin"
+      },
+      "tetoeehoward": {
+        "password": "tetoee-files-2024",
+        "paths": ["/tetoeehoward-home/", "/apps-tetoeehoward/"],
+        "home_dir": "/home/tetoeehoward",
+        "special_paths": {
+          "rodemoter_apps": "/tetoeehoward-home/apps/Rodemoter/"
+        }
+      },
+      "wharper": {
+        "password": "walter-files-2024",
+        "paths": ["/wharper-home/", "/apps-wharper/"],
+        "home_dir": "/home/wharper"
+      }
+    },
+    "critical_upload_paths": {
+      "rodemoter_main": "/tetoeehoward-home/apps/Rodemoter/",
+      "rodemoter_public": "/home/devinecr/public_html/downloads/Rodemoter/",
+      "shared_resources": "/shared/",
+      "user_apps_pattern": "/apps-{username}/",
+      "audio_portrait_api": "/audio-portrait-dist/"
+    },
+    "automation_tools": {
+      "helper_script": "/home/claude-copyparty-helper.sh",
+      "auto_memory_script": "/home/claude-auto-memory.sh",
+      "credentials_database": "/home/COPYPARTY_CREDENTIALS.json",
+      "memory_instructions": "/home/CLAUDE_MEMORY_INSTRUCTIONS.md",
+      "connection_protocol": "/home/CLAUDE_CONNECTION_PROTOCOL.md"
+    },
+    "hubnode_api_status": {
+      "base_path": "/home/devinecr/apps/hubnode/api",
+      "audio_portrait": {
+        "path": "/home/devinecr/apps/hubnode/api/audio-portrait",
+        "upload_mapping": "/audio-portrait-dist/",
+        "status": "configured"
+      },
+      "claude_sync": {
+        "script": "/home/devinecr/apps/hubnode/api/claude-local-sync.py",
+        "venv": "/home/devinecr/apps/hubnode/api/claude-sync-venv",
+        "status": "available"
+      }
+    },
+    "service_configuration": {
+      "copyparty_3924": {
+        "service": "copyparty.service",
+        "config": "/home/devinecr/apps/hubnode/backend/copyparty-args.txt",
+        "log": "/var/log/copyparty.log"
+      },
+      "copyparty_3923": {
+        "service": "copyparty-3923.service",
+        "config": "/home/devinecr/apps/hubnode/backend/copyparty-args-3923.txt",
+        "log": "/var/log/copyparty-3923.log"
+      }
+    },
+    "quick_test_commands": {
+      "verify_services": "systemctl status copyparty copyparty-3923 --no-pager",
+      "test_ports": "netstat -tulnp | grep '392[34]'",
+      "test_admin_access": "curl -s -u admin:hub-node-api-2024 https://files.raywonderis.me/ | head -1",
+      "list_users": "/home/claude-copyparty-helper.sh list",
+      "show_ports": "/home/claude-copyparty-helper.sh ports",
+      "memory_export": "/home/claude-auto-memory.sh"
+    },
+    "connection_protocol_steps": [
+      "1. Run /home/claude-auto-memory.sh for current state",
+      "2. Verify services: systemctl status copyparty copyparty-3923",
+      "3. Test connectivity: curl -s -I http://64.20.46.178:3924/",
+      "4. Test admin access: curl -s -u admin:hub-node-api-2024 files.raywonderis.me",
+      "5. Get user list: /home/claude-copyparty-helper.sh list"
+    ],
+    "memory_priority_levels": {
+      "always_remember": [
+        "admin:hub-node-api-2024",
+        "64.20.46.178",
+        "ports 3924, 3923",
+        "files.raywonderis.me",
+        "/tetoeehoward-home/apps/Rodemoter/",
+        "/home/claude-copyparty-helper.sh"
+      ],
+      "session_specific": [
+        "current_user_credentials",
+        "active_upload_paths",
+        "working_file_operations",
+        "troubleshooting_context"
+      ],
+      "reference_info": [
+        "alternative_domains",
+        "service_account_credentials",
+        "configuration_file_paths",
+        "system_administration_details"
+      ]
+    }
+  }
+}

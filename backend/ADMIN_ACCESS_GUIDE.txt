@@ -1,0 +1,161 @@
+# Administrative Access Guide - CopyParty File Management System
+
+## Master Admin Access
+Username: admin
+Password: hub-node-api-2024
+Access Level: Full System Access (All Directories, All Operations)
+
+## Specialized Admin Accounts
+
+### Composr Management
+Username: composer
+Password: composr-manage-2025
+Access: All Composr sites, uploads, and website management
+
+### WordPress Management  
+Username: wordpress
+Password: wp-manage-2025
+Access: All WordPress sites, media uploads, and content management
+
+### Audio Portrait Management
+Username: audioportrait
+Password: audio-portrait-api-2025
+Access: Audio Portrait distribution, updates, and app-specific files
+
+## Complete Directory Access (Admin Only)
+
+### Full User Home Access
+/root-tappedin/          # Complete TappedIn.fm access
+/root-devinecr/          # Complete DevineCreations access  
+/root-dom/               # Complete RayWonderIs.Me access
+/root-tetoeehoward/      # Complete TetoeeHoward.com access
+/root-wharper/           # Complete WalterHarper.com access
+
+### System Directories
+/hubnode-clients/        # HubNode client applications
+/hubnode-api/           # API services and endpoints
+/hubnode-backend/       # Backend services and scripts
+
+### All File Management Areas
+/downloads-devinecr/    # Downloads (lowercase)
+/Downloads-devinecr/    # Downloads (capitalized)
+/attachments-devinecr/  # Attachments (lowercase)
+/Attachments-devinecr/  # Attachments (capitalized)
+/shared/                # Shared system resources
+
+### All Application Development
+/apps-tappedin/         # TappedIn applications
+/apps-devinecr/         # DevineCreations applications
+/apps-dom/              # Dom's applications
+/audio-portrait-dev/    # Development workspace
+/audio-portrait-dist/   # Distribution files
+
+### All Website Content
+/composr-devinecreations/*    # Complete DevineCreations.net
+/composr-raywonderis/*        # Complete RayWonderIs.Me
+/whmcs-devinecr/*            # WHMCS frontend
+/wp-tappedin/*               # TappedIn.fm WordPress
+/wp-tetoeehoward/*           # TetoeeHoward.com WordPress
+/wp-walterharper/*           # WalterHarper.com WordPress
+
+### Staging and Processing
+/incoming-raywonderis/       # RayWonderIs.Me staging
+/incoming-devinecreations/   # DevineCreations.net staging
+/incoming-tappedin/          # TappedIn.fm staging
+
+## Administrative Operations
+
+### System Monitoring
+- CopyParty is running on port 3923
+- Audio Portrait API on port 5001
+- All services logged and monitored
+- Access logs available in /logs/
+
+### File Management Operations
+- Upload to any directory
+- Download from any location
+- Move/rename files across all directories
+- Delete files (with caution)
+- Create new directories
+- Modify permissions
+
+### User Management
+- Monitor user access and usage
+- Reset user passwords if needed
+- Grant/revoke directory access
+- Review access logs
+
+### System Maintenance
+- Backup critical directories
+- Clean up old/unused files
+- Monitor disk space usage
+- Update system configurations
+
+## Security Responsibilities
+
+### Access Control
+- Maintain user directory restrictions
+- Monitor for unauthorized access attempts
+- Regular password updates
+- Review and audit file access logs
+
+### File Security
+- Scan uploaded files for malware
+- Maintain backup copies of critical files
+- Ensure proper file permissions
+- Monitor for suspicious file activity
+
+### System Security
+- Keep CopyParty updated
+- Monitor system resource usage
+- Maintain SSL certificates
+- Regular security audits
+
+## Emergency Procedures
+
+### Service Recovery
+- CopyParty restart: pkill copyparty && /start-copyparty-enhanced.sh
+- API restart: Restart Audio Portrait API service
+- DNS issues: Check /etc/hosts and DNS settings
+- Port conflicts: Check ss -tlnp for port usage
+
+### User Issues
+- Password reset: Update in CopyParty configuration
+- Access problems: Check directory permissions
+- Upload failures: Verify disk space and permissions
+- Connection issues: Verify network and firewall settings
+
+## Backup Strategies
+
+### Critical Directories
+- /home/*/apps/ (All application development)
+- /composr-*/uploads/ (All public content)
+- /wp-*/uploads/ (All WordPress media)
+- /hubnode-*/ (All HubNode components)
+
+### Configuration Files
+- CopyParty configuration scripts
+- nginx configuration files
+- DNS zone files
+- SSL certificates
+
+## Monitoring & Logs
+
+### Access Logs
+- CopyParty logs: /logs/copyparty.txt
+- API logs: /api/audio-portrait/access.log
+- System logs: /var/log/
+
+### Performance Monitoring
+- Disk usage: df -h
+- Network usage: Monitor port 3923 traffic
+- User activity: CopyParty built-in statistics
+- File transfer rates: Monitor large uploads/downloads
+
+## Contact Information
+System Administrator: DevineCreations Network
+Emergency Contact: Available through primary admin channels
+Documentation: /home/devinecr/apps/hubnode/backend/
+
+Generated: 2025-09-27
+Access Level: ADMINISTRATIVE - CONFIDENTIAL

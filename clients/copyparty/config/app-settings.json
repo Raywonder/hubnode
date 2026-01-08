@@ -1,0 +1,30 @@
+{
+  "app_info": {
+    "name": "copyparty",
+    "location": "/home/devinecr/apps/hubnode/clients/copyparty",
+    "updated": "2025-09-30T00:45:03-04:00",
+    "version": "2025-09-30"
+  },
+  "server_endpoints": {
+    "primary": "https://files.raywonderis.me",
+    "fallback_ip": "64.20.46.178",
+    "ports": [3924, 3923],
+    "health_check": "https://files.raywonderis.me/health"
+  },
+  "integration": {
+    "claude_helper": "/home/claude-copyparty-helper.sh",
+    "auto_memory": "/home/claude-auto-memory.sh",
+    "credentials_db": "/home/COPYPARTY_CREDENTIALS.json"
+  },
+  "ui_preferences": {
+    "auto_detect_user": true,
+    "remember_credentials": false,
+    "default_upload_chunk_mb": 10,
+    "connection_timeout_seconds": 30
+  },
+  "support": {
+    "primary_email": "support@devine-creations.com",
+    "secondary_email": "webmaster@devine-creations.com",
+    "contact_info": "For technical support or issues with CopyParty UI, contact support@devine-creations.com"
+  }
+}

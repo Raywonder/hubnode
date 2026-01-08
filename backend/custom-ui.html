@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyParty Hub Node - Enhanced File Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .header h1 {
+            color: #4a5568;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header h1::before {
+            content: "📁";
+            font-size: 1.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-title {
+            color: #2d3748;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .access-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #38a169 0%, #48bb78 100%);
+        }
+
+        .btn-tertiary {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+
+        .btn-tertiary:hover {
+            background: linear-gradient(135deg, #dd6b20 0%, #ed8936 100%);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .info-item {
+            background: rgba(247, 250, 252, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            color: #2d3748;
+            font-weight: 500;
+            margin-top: 0.25rem;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .use-cases {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .use-case {
+            background: rgba(247, 250, 252, 0.8);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #48bb78;
+        }
+
+        .use-case h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .use-case p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CopyParty Hub Node - Enhanced File Manager</h1>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- Quick Access Card -->
+            <div class="card">
+                <h2 class="card-title">🚀 Quick Access</h2>
+                <div class="access-links">
+                    <a href="http://64.20.46.178:3923" class="btn" target="_blank">
+                        📁 Open File Manager
+                    </a>
+                    <a href="http://64.20.46.178:3923/?json" class="btn btn-secondary" target="_blank">
+                        📋 API Explorer
+                    </a>
+                    <a href="http://64.20.46.178:3923/?tar" class="btn btn-tertiary" target="_blank">
+                        📦 Download as Archive
+                    </a>
+                    <a href="#upload-zone" class="btn">
+                        ⬆️ Upload Files
+                    </a>
+                </div>
+            </div>
+
+            <!-- Server Info Card -->
+            <div class="card">
+                <h2 class="card-title">🖥️ Server Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Primary URL</div>
+                        <div class="info-value">64.20.46.178:3923</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Username</div>
+                        <div class="info-value">admin</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Max Upload</div>
+                        <div class="info-value">10 GB</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Status</div>
+                        <div class="info-value">🟢 Online</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Card -->
+            <div class="card">
+                <h2 class="card-title">⭐ Features</h2>
+                <ul class="features-list">
+                    <li>Drag & Drop File Upload</li>
+                    <li>Large File Support (10GB)</li>
+                    <li>RESTful API Access</li>
+                    <li>TAR/ZIP Archive Downloads</li>
+                    <li>Real-time Progress Tracking</li>
+                    <li>Secure Authentication</li>
+                    <li>WebSocket Support</li>
+                    <li>Mobile Responsive</li>
+                    <li>Multi-Domain Access</li>
+                    <li>Batch Operations</li>
+                </ul>
+            </div>
+
+            <!-- Domain Access Card -->
+            <div class="card">
+                <h2 class="card-title">🌐 Domain Access Points</h2>
+                <div class="access-links">
+                    <a href="http://files.tappedin.fm" class="btn" target="_blank">
+                        🎧 Podcast Submissions
+                    </a>
+                    <a href="http://files.raywonderis.me" class="btn btn-secondary" target="_blank">
+                        📝 Composr Imports
+                    </a>
+                    <a href="http://files.devine-creations.com" class="btn btn-tertiary" target="_blank">
+                        💻 Dev Files
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="use-cases">
+            <h2 class="card-title">💡 Working Use Cases</h2>
+            
+            <div class="use-case">
+                <h4>🔄 Automated Backups</h4>
+                <p>Set up automated file backups using the API. Perfect for server maintenance, database dumps, and configuration backups.</p>
+                <div class="code-block">
+curl -u admin:hub-node-api-2024 -F "file=@backup.tar.gz" http://64.20.46.178:3923/backups/</div>
+            </div>
+
+            <div class="use-case">
+                <h4>📱 Mobile File Access</h4>
+                <p>Access files from any mobile device. Upload photos, documents, and media from your phone or tablet instantly.</p>
+                <div class="code-block">
+# Mobile-optimized interface automatically loads
+# Supports touch gestures and mobile uploads</div>
+            </div>
+
+            <div class="use-case">
+                <h4>🤝 Team Collaboration</h4>
+                <p>Share large files with team members without email size limits. Perfect for design files, videos, and project assets.</p>
+                <div class="code-block">
+# Share link: http://64.20.46.178:3923/shared/project-files/
+# Team members can download without authentication</div>
+            </div>
+
+            <div class="use-case">
+                <h4>🎬 Media Streaming</h4>
+                <p>Stream video and audio files directly from the browser. Built-in media player with seeking and quality controls.</p>
+                <div class="code-block">
+# Direct streaming URL format:
+# http://64.20.46.178:3923/media/video.mp4?stream=true</div>
+            </div>
+
+            <div class="use-case">
+                <h4>📊 Development Integration</h4>
+                <p>Integrate with CI/CD pipelines, automated deployments, and development workflows using the comprehensive API.</p>
+                <div class="code-block">
+# List files in JSON format
+curl -u admin:hub-node-api-2024 http://64.20.46.178:3923/?json
+
+# Download specific file
+curl -u admin:hub-node-api-2024 -O http://64.20.46.178:3923/deployment.zip</div>
+            </div>
+
+            <div class="use-case">
+                <h4>💾 Archive Management</h4>
+                <p>Store and manage long-term archives with built-in compression and deduplication. Organize by date, project, or category.</p>
+                <div class="code-block">
+# Create organized archive structure
+mkdir -p /uploads/archives/2025/september/
+# Upload with automatic categorization</div>
+            </div>
+        </div>
+
+        <!-- Download Options -->
+        <div class="card">
+            <h2 class="card-title">⬇️ Download Options</h2>
+            <div class="access-links">
+                <a href="http://64.20.46.178:3923/?tar" class="btn" target="_blank">
+                    📦 Download All as TAR Archive
+                </a>
+                <a href="http://64.20.46.178:3923/?zip" class="btn btn-secondary" target="_blank">
+                    🗜️ Download All as ZIP Archive
+                </a>
+                <a href="http://64.20.46.178:3923/?ls" class="btn btn-tertiary" target="_blank">
+                    📋 List All Files (Plain Text)
+                </a>
+            </div>
+        </div>
+
+        <!-- API Quick Reference -->
+        <div class="card">
+            <h2 class="card-title">🔧 API Quick Reference</h2>
+            <div class="code-block">
+# Upload File
+curl -u admin:hub-node-api-2024 -F "file=@document.pdf" http://64.20.46.178:3923/
+
+# List Files (JSON)
+curl -u admin:hub-node-api-2024 http://64.20.46.178:3923/?json
+
+# Download Single File
+curl -u admin:hub-node-api-2024 -O http://64.20.46.178:3923/document.pdf
+
+# Download as Archive
+curl -u admin:hub-node-api-2024 -O http://64.20.46.178:3923/?tar
+
+# Create Directory
+curl -u admin:hub-node-api-2024 -X POST http://64.20.46.178:3923/?mkdir=newfolder
+
+# Get Server Status
+curl -u admin:hub-node-api-2024 http://64.20.46.178:3923/?stats
+
+# Domain-Specific Access
+# Podcast Submissions: http://files.tappedin.fm
+# Composr Imports: http://files.raywonderis.me  
+# Dev Files: http://files.devine-creations.com</div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Status checker
+            function checkServerStatus() {
+                fetch('http://64.20.46.178:3923', {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                }).then(() => {
+                    document.querySelector('.info-value').innerHTML = '🟢 Online';
+                }).catch(() => {
+                    document.querySelector('.info-value').innerHTML = '🔴 Offline';
+                });
+            }
+
+            // Check status every 30 seconds
+            setInterval(checkServerStatus, 30000);
+            
+            // Add click animations
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'translateY(0px) scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

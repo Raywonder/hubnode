@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubNode Gateway API Documentation</title>
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="/static/docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn">← Back to API Dashboard</a>
+
+        <div class="header">
+            <h1>🌐 HubNode Gateway API</h1>
+            <p>Auto-generated API Reference</p>
+        </div>
+
+        <div class="update-info">
+            🔄 Last updated: 2025-10-19 23:28:01 UTC<br>
+            Auto-refreshes every 5 minutes • Updates every 1 minute
+        </div>
+
+        <div class="card">
+            <h2>Base URLs</h2>
+            <ul style="margin-left: 20px; color: #666;">
+                <li><code>https://api.devinecreations.net</code></li>
+                <li><code>https://api.devine-creations.com</code></li>
+                <li><code>https://api.tetoeehoward.com</code></li>
+                <li><code>https://api.tappedin.fm</code></li>
+            </ul>
+
+            <h2>Gateway Services</h2>
+            <p>The unified gateway routes requests to backend services based on path prefixes.</p>
+        </div>
+
+        <div class="card">
+            <h2>Available Endpoints</h2>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Gateway documentation
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/audio-portrait/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to audio portrait API
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/copyparty/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to CopyParty Management API
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/headscale/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Headscale Control Server - no API key required
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/health</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Gateway health check
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/keys</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all API keys (requires master key)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/logs/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to user logs collector
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/mastodon-bridge/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Mastodon Bridge Bot - no API key required
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span> <span class="method patch">PATCH</span>
+                    <span class="path">/mastodon/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Mastodon Social Network - no API key required (has own auth)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span> <span class="method patch">PATCH</span>
+                    <span class="path">/mattermost/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Mattermost Team Chat - no API key required (has own auth)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/monitor/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to service monitor API
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart the API Gateway service (requires master key)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/services</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all services and their health status
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/services/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Services Manager API
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/stats</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get gateway statistics
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/tailscale/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Tailscale UI - no API key required
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span> <span class="method post">POST</span> <span class="method put">PUT</span> <span class="method delete">DELETE</span>
+                    <span class="path">/webhooks/<path:path></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Route to Webhook Manager (admin only)
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="text-align: center; color: white; margin-top: 40px; opacity: 0.8;">
+            <p>Auto-generated from unified-gateway.py</p>
+        </div>
+    </div>
+</body>
+</html>

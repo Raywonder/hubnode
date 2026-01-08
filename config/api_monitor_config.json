@@ -1,0 +1,64 @@
+{
+  "service_monitor_api": {
+    "host": "localhost",
+    "port": 5003,
+    "base_url": "http://localhost:5003",
+    "endpoints": {
+      "health": "/health",
+      "all_services": "/status",
+      "systemd_services": "/status/systemd",
+      "port_services": "/status/ports",
+      "copyparty": "/status/copyparty",
+      "specific_service": "/service/{service_name}"
+    },
+    "description": "Service Monitor API for monitoring all critical services",
+    "location": "/home/devinecr/apps/hubnode/clients/api_monitor"
+  },
+  "headscale_api": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "base_url": "http://127.0.0.1:8080",
+    "endpoints": {
+      "health": "/health",
+      "machines": "/api/v1/machine",
+      "users": "/api/v1/user",
+      "routes": "/api/v1/routes",
+      "preauthkeys": "/api/v1/preauthkey"
+    },
+    "description": "Headscale VPN Control Server API",
+    "location": "Headscale binary service",
+    "auth_required": true,
+    "protocol": "gRPC on port 50443, HTTP on 8080"
+  },
+  "tailscale_ui_api": {
+    "host": "tailscale.tappedin.fm",
+    "port": 443,
+    "base_url": "https://tailscale.tappedin.fm",
+    "endpoints": {
+      "status": "/api/status",
+      "nodes": "/api/nodes",
+      "my_devices": "/api/my-devices",
+      "users": "/api/users",
+      "routes": "/api/routes",
+      "headscale_proxy": "/headscale-api/"
+    },
+    "description": "Tailscale Web UI API with Headscale integration",
+    "location": "/home/tappedin/tailscaleui/"
+  },
+  "vpn_installer_api": {
+    "host": "tailscale.tappedin.fm",
+    "port": 443,
+    "base_url": "https://tailscale.tappedin.fm",
+    "endpoints": {
+      "check_access": "/api/installer?action=check_access",
+      "generate_installer": "/api/installer?action=generate_installer",
+      "download_installer": "/api/installer?action=download_installer",
+      "installation_status": "/api/installer?action=installation_status"
+    },
+    "description": "VPN Installer Generation and Distribution API",
+    "auth_required": true,
+    "supported_platforms": ["windows", "mac", "gui"]
+  },
+  "updated": "2026-01-03T17:00:00Z",
+  "version": "2.0.0"
+}

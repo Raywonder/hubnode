@@ -1,0 +1,1 @@
+-i 127.0.0.1 -p 3926 --name WalterHarper-Files -v /home/wharper/public_html/wp-content/uploads:/uploads:rwmG -a wharper:walter-files-2024:rwm --doctitle WalterHarper-File-Manager --hist 100 --th-covers 1920x1080 --ih --no-robots --dotpart --hardlink --stats --xff-hdr X-Real-IP --rproxy -1 --aclose 0 --loris 0

@@ -1,0 +1,53 @@
+{
+  "service_monitor_api": {
+    "host": "localhost",
+    "port": 5003,
+    "base_url": "http://localhost:5003",
+    "endpoints": {
+      "health": "/health",
+      "all_services": "/status",
+      "systemd_services": "/status/systemd",
+      "port_services": "/status/ports",
+      "copyparty": "/status/copyparty",
+      "specific_service": "/service/{service_name}"
+    },
+    "description": "Service Monitor API for monitoring all critical services",
+    "location": "/home/devinecr/apps/hubnode/clients/api_monitor"
+  },
+  "user_logs_api": {
+    "host": "localhost",
+    "port": 5002,
+    "base_url": "http://localhost:5002",
+    "endpoints": {
+      "health": "/health",
+      "submit_log": "/api/logs/submit",
+      "log_event": "/api/stats/event",
+      "logs_summary": "/api/logs/summary"
+    },
+    "description": "User Logs Collection API for app installers",
+    "location": "/home/devinecr/apps/hubnode/api"
+  },
+  "audio_portrait_api": {
+    "host": "localhost",
+    "port": 5001,
+    "base_url": "http://localhost:5001",
+    "description": "Audio Portrait API",
+    "location": "/home/devinecr/apps/hubnode/api/audio-portrait"
+  },
+  "copyparty_servers": {
+    "complete_management": {
+      "port": 3923,
+      "url": "http://localhost:3923",
+      "description": "CopyParty Complete File Management",
+      "access": "Admin access - full system control"
+    },
+    "public_uploads": {
+      "port": 3924,
+      "url": "http://localhost:3924",
+      "description": "CopyParty Public Uploads",
+      "access": "Public access - upload only"
+    }
+  },
+  "updated": "2025-10-01T11:38:00Z",
+  "maintained_by": "devinecr"
+}

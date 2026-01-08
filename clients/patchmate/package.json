@@ -1,0 +1,33 @@
+{
+  "name": "patchmate-hubnode-integration",
+  "version": "1.0.0",
+  "description": "PatchMate integration with HubNode API system for server sync and client updates",
+  "main": "patchmate-integration.js",
+  "scripts": {
+    "start": "node patchmate-integration.js",
+    "dev": "nodemon patchmate-integration.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "patchmate",
+    "midi",
+    "hubnode",
+    "api",
+    "integration",
+    "music",
+    "patches"
+  ],
+  "author": "Claude Code Integration",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

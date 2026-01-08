@@ -1,0 +1,30 @@
+{
+  "api_endpoints": {
+    "update_check": "https://api.devinecreations.net/api/audio-portrait/version",
+    "file_upload": "https://api.devinecreations.net/api/audio-portrait/upload", 
+    "file_download": "https://api.devinecreations.net/api/audio-portrait/download",
+    "health_check": "https://api.devinecreations.net/api/audio-portrait/health",
+    "config": "https://api.devinecreations.net/api/audio-portrait/config"
+  },
+  "copyparty": {
+    "url": "https://files.devinecreations.net/audio-portrait/",
+    "username": "audioportrait",
+    "password": "audio-portrait-api-2025"
+  },
+  "ssh_access": {
+    "host": "64.20.46.178",
+    "user": "devinecr", 
+    "path": "/home/devinecr/apps/hubnode/api/audio-portrait/uploads/",
+    "port": 22
+  },
+  "update_settings": {
+    "check_interval_seconds": 3600,
+    "auto_update": false,
+    "update_channel": "stable"
+  },
+  "app_info": {
+    "name": "Audio Portrait",
+    "identifier": "net.devinecreations.audioportrait",
+    "support_email": "support@devinecreations.net"
+  }
+}

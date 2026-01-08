@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-ce485670-9f9f-45ca-8f71-2fe52e8ba1f8"],
+      "env": {
+        "CONTEXT7_API_KEY": "ctx7sk-ce485670-9f9f-45ca-8f71-2fe52e8ba1f8"
+      }
+    },
+    "audio-portrait-dev": {
+      "description": "Audio Portrait development MCP server for build and deployment tasks",
+      "command": "node",
+      "args": ["/home/devinecr/apps/hubnode/api/audio-portrait/dev-mcp-server.js"],
+      "env": {
+        "AUDIO_PORTRAIT_API_URL": "https://api.devinecreations.net/api/audio-portrait",
+        "UFM_LICENSE_URL": "https://api.devinecreations.net/modules/addons/ufm_license_manager",
+        "COPYPARTY_URL": "https://files.devinecreations.net/audio-portrait/"
+      }
+    }
+  }
+}

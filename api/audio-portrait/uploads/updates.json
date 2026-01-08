@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "releaseDate": "2025-09-27",
+  "notes": "v0.2.0 - Enhanced Audio Features & Bug Fixes\n\n• Fixed ffplay detection and audio backend initialization\n• Enhanced test sound playback with multiple fallback paths\n• High-quality audio format support (16-32bit, 44.1-192kHz)\n• Professional recording with pause/resume/playback\n• Audio test integration with real-time monitoring\n• Full transport controls for audio playback\n• System event sounds throughout the application\n• Audio conversion with FFmpeg support\n• Welcome screen audio testing\n• Comprehensive audio backend with VLC/ffplay support\n• Support for professional formats: AIFF, DSD, APE, FLAC, etc.",
+  "platforms": {
+    "darwin": {
+      "url": "Audio Portrait-0.2.0.dmg",
+      "sha512": "",
+      "size": 119800372
+    },
+    "darwin-arm64": {
+      "url": "Audio Portrait-0.2.0-arm64.dmg",
+      "sha512": "",
+      "size": 119563767
+    },
+    "win32": {
+      "url": "Audio Portrait Setup 0.2.0.exe",
+      "sha512": "",
+      "size": 198293530
+    },
+    "linux": {
+      "url": "Audio Portrait-0.2.0.AppImage",
+      "sha512": "",
+      "size": 125829120
+    },
+    "linux-deb": {
+      "url": "audio-portrait_0.2.0_amd64.deb",
+      "sha512": "",
+      "size": 88080384
+    }
+  },
+  "files": [
+    {
+      "url": "Audio Portrait-0.2.0.dmg",
+      "sha512": "",
+      "size": 119800372
+    },
+    {
+      "url": "Audio Portrait-0.2.0-arm64.dmg", 
+      "sha512": "",
+      "size": 119563767
+    },
+    {
+      "url": "Audio Portrait Setup 0.2.0.exe",
+      "sha512": "",
+      "size": 198293530
+    },
+    {
+      "url": "Audio Portrait-0.2.0.AppImage",
+      "sha512": "",
+      "size": 125829120
+    },
+    {
+      "url": "audio-portrait_0.2.0_amd64.deb",
+      "sha512": "",
+      "size": 88080384
+    }
+  ]
+}

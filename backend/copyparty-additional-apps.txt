@@ -1,0 +1,50 @@
+# Additional CopyParty App Logins and Directories
+
+# PatchMate Application
+-v /home/devinecr/apps/patchmate-deployment:/patchmate-deployment:r:rwm,admin,devinecr,patchmate
+-v /home/devinecr/apps/hubnode/clients/patchmate:/patchmate-client:r:rwm,admin,devinecr,patchmate
+-a patchmate:patchmate-app-2025
+
+# BEMA Media Player Application  
+-v /home/devinecr/apps/bema:/bema-development:r:rwm,admin,devinecr,bema
+-v /home/devinecr/apps/hubnode/clients/bema:/bema-client:r:rwm,admin,devinecr,bema
+-a bema:bema-media-2025
+
+# Context7 Application
+-v /home/devinecr/apps/context7:/context7-app:r:rwm,admin,devinecr,context7
+-a context7:context7-api-2025
+
+# UFM (Universal File Manager) Application
+-v /home/devinecr/apps/ufm-macos:/ufm-macos:r:rwm,admin,devinecr,ufm
+-a ufm:ufm-manager-2025
+
+# Socket Server Application
+-v /home/devinecr/apps/socket-server:/socket-server:r:rwm,admin,devinecr,socketio
+-a socketio:socket-server-2025
+
+# Jellyfin Application
+-v /home/devinecr/apps/jellyfin:/jellyfin-app:r:rwm,admin,devinecr,jellyfin
+-a jellyfin:jellyfin-media-2025
+
+# OpenLink Application  
+-v /home/devinecr/apps/OpenLink:/openlink-app:r:rwm,admin,devinecr,openlink
+-a openlink:openlink-api-2025
+
+# Chatterbox Application
+-v /home/devinecr/apps/chatterbox:/chatterbox-app:r:rwm,admin,devinecr,chatterbox
+-a chatterbox:chatterbox-chat-2025
+
+# Claude Extension
+-v /home/devinecr/apps/claude-extension:/claude-extension:r:rwm,admin,devinecr,claude
+-a claude:claude-ext-2025
+
+# Mastodon Application
+-v /home/devinecr/apps/mastodon:/mastodon-app:r:rwm,admin,devinecr,mastodon
+-a mastodon:mastodon-social-2025
+
+# SonoBus (Dom's apps)
+-v /home/dom/apps/sonobus:/sonobus-app:r:rwm,admin,dom,sonobus
+-a sonobus:sonobus-audio-2025
+
+# Jellyfin Development (Dom's apps)
+-v /home/dom/jellyfin-dev:/jellyfin-dev:r:rwm,admin,dom,jellyfin

@@ -1,0 +1,42 @@
+{
+  "name": "bema-backend",
+  "version": "1.0.0",
+  "description": "Accessible media player backend with streaming capabilities",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "pm2": "pm2 start app.js --name softnode-backend",
+    "stop": "pm2 stop softnode-backend",
+    "restart": "pm2 restart softnode-backend",
+    "logs": "pm2 logs softnode-backend"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "ffmpeg-static": "^5.2.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "music-metadata": "^7.14.0",
+    "mysql2": "^3.6.0",
+    "sharp": "^0.34.3",
+    "socket.io": "^4.7.2",
+    "superagent": "^10.2.3",
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4",
+    "nodemon": "^3.0.1",
+    "supertest": "^7.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

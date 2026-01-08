@@ -1,0 +1,134 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-03",
+  "services": {
+    "core": {
+      "monitor": {
+        "name": "Service Monitor",
+        "url": "http://localhost:5003",
+        "port": 5003,
+        "prefix": "/monitor",
+        "health_endpoint": "/health",
+        "description": "System service monitoring",
+        "enabled": true,
+        "auto_start": true
+      },
+      "logs": {
+        "name": "User Logs Collector",
+        "url": "http://localhost:5002",
+        "port": 5002,
+        "prefix": "/logs",
+        "health_endpoint": "/health",
+        "description": "App logs and analytics",
+        "enabled": true,
+        "auto_start": true
+      },
+      "audio-portrait": {
+        "name": "Audio Portrait API",
+        "url": "http://localhost:5001",
+        "port": 5001,
+        "prefix": "/audio-portrait",
+        "health_endpoint": "/api/audio-portrait/health",
+        "description": "Audio Portrait app services",
+        "enabled": true,
+        "auto_start": true
+      },
+      "webhooks": {
+        "name": "Webhook Manager",
+        "url": "http://localhost:5004",
+        "port": 5004,
+        "prefix": "/webhook",
+        "health_endpoint": "/health",
+        "description": "Webhook and external API integration",
+        "enabled": true,
+        "auto_start": false
+      },
+      "flexpbx": {
+        "name": "FlexPBX Master API",
+        "url": "http://localhost:5018",
+        "port": 5018,
+        "prefix": "/flexpbx",
+        "health_endpoint": "/health",
+        "description": "Master FlexPBX Server API - Extensions, Trunks, Call Logs, Voicemail, System",
+        "enabled": true,
+        "auto_start": true,
+        "backend_url": "http://localhost/api",
+        "features": [
+          "extensions",
+          "trunks",
+          "call-logs",
+          "voicemail",
+          "system"
+        ]
+      },
+      "radio-streams": {
+        "name": "Radio Streams API",
+        "url": "http://localhost/stream-manager/api",
+        "prefix": "/radio",
+        "endpoint": "/home/devinecr/apps/hubnode/api/radio-streams.php",
+        "description": "Internet radio stream management and monitoring for Raywonder and TappedIn.FM",
+        "enabled": true,
+        "auto_start": false,
+        "streams": [
+          {
+            "id": "raywonder",
+            "name": "Raywonder Radio",
+            "url": "http://stream.raywonderis.me:8003/jellyfin-radio",
+            "type": "jellyfin"
+          },
+          {
+            "id": "tappedin",
+            "name": "TappedIn.FM",
+            "url": "http://stream.tappedin.fm:8004/tappedin-radio",
+            "type": "podcast"
+          }
+        ],
+        "features": [
+          "stream-status",
+          "now-playing",
+          "queue-management",
+          "listener-stats"
+        ]
+      }
+    },
+    "user_apps": {
+      "copyparty-admin": {
+        "name": "CopyParty Admin",
+        "url": "http://localhost:3923",
+        "port": 3923,
+        "prefix": "/files",
+        "health_endpoint": "/",
+        "description": "CopyParty file management",
+        "user": "devinecr",
+        "enabled": false,
+        "auto_start": false
+      },
+      "copyparty-public": {
+        "name": "CopyParty Public",
+        "url": "http://localhost:3924",
+        "port": 3924,
+        "prefix": "/files-public",
+        "health_endpoint": "/",
+        "description": "CopyParty public uploads",
+        "user": "devinecr",
+        "enabled": false,
+        "auto_start": false
+      }
+    },
+    "discovered": {
+      "note": "Auto-discovered services will be added here",
+      "scan_paths": [
+        "/home/*/apps/*",
+        "/home/*/apps/*/api",
+        "/home/*/apps/*/backend",
+        "/home/*/apps/*/server"
+      ]
+    }
+  },
+  "discovery": {
+    "enabled": true,
+    "auto_load": true,
+    "scan_interval_hours": 6,
+    "last_scan": null
+  }
+}

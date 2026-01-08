@@ -1,0 +1,625 @@
+t0: 1764275102.917
+argv: /home/linuxbrew/.linuxbrew/opt/python@3.13/bin/python3.13 copyparty-sfx.py -i 0.0.0.0 -p 3923 --name 'CopyParty Complete File Management System' -v /home/dom/public_html/uploads:/composr-raywonderis/uploads:rwm -v /home/dom/public_html/uploads/website_specific:/composr-raywonderis/website_specific:rwm -v /home/dom/public_html/uploads/website_specific/apps:/composr-raywonderis/website_specific/apps:rwm -v /home/dom/public_html/uploads/website_specific/apps/audio-portrait:/composr-raywonderis/apps/audio-portrait:rwm -v /home/dom/public_html/uploads/filedump:/composr-raywonderis/filedump:rwm -v /home/dom/public_html/uploads/attachments:/composr-raywonderis/attachments:rwm -v /home/dom/public_html/uploads/galleries:/composr-raywonderis/galleries:rwm -v /home/devinecr/devinecreations.net/uploads:/composr-devinecreations/uploads:rwm -v /home/devinecr/devinecreations.net/uploads/website_specific:/composr-devinecreations/website_specific:rwm -v /home/devinecr/devinecreations.net/uploads/filedump:/composr-devinecreations/filedump:rwm -v /home/devinecr/devinecreations.net/uploads/attachments:/composr-devinecreations/attachments:rwm -v /home/devinecr/devinecreations.net/uploads/galleries:/composr-devinecreations/galleries:rwm -v /home/devinecr/devinecreations.net/uploads/website_specific/apps:/composr-devinecreations/website_specific/apps:rwm -v /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait:/composr-devinecreations/apps/audio-portrait:rwm -v /home/devinecr/public_html:/whmcs-devinecr:rwm -v /home/tappedin/public_html/wp-content/uploads:/wp-tappedin/uploads:rwm -v /home/tappedin/public_html/wp-content/uploads/podcast-submissions:/wp-tappedin/podcast-submissions:rwm -v /home/tetoeehoward/public_html/wp-content/uploads:/wp-tetoeehoward/uploads:rwm -v /home/wharper/public_html/wp-content/uploads:/wp-walterharper/uploads:rwm -v /home/tappedin/apps:/apps-tappedin:rwm -v /home/devinecr/apps:/apps-devinecr:rwm -v /home/dom/apps:/apps-dom:rwm -v /home/devinecr/apps/hubnode/clients:/hubnode-clients:rwm -v /home/devinecr/apps/hubnode/api:/hubnode-api:rwm -v /home/devinecr/apps/hubnode/backend:/hubnode-backend:rwm -v /home/devinecr/apps/hubnode/api/audio-portrait/uploads:/audio-portrait-dist:rwm -v /home/tappedin/apps/audio-portrait:/audio-portrait-dev:rwm -v /home/devinecr/shared:/shared:rwm -v /home/devinecr/downloads:/downloads-devinecr:rwm -v /home/devinecr/Downloads:/Downloads-devinecr:rwm -v /home/devinecr/attachments:/attachments-devinecr:rwm -v /home/devinecr/Attachments:/Attachments-devinecr:rwm -v /home/dom/public_html/uploads/incoming:/incoming-raywonderis:rwm -v /home/devinecr/devinecreations.net/uploads/incoming:/incoming-devinecreations:rwm -v /home/tappedin/public_html/wp-content/uploads/incoming:/incoming-tappedin:rwm -v /home/tappedin:/root-tappedin:rwm -v /home/devinecr:/root-devinecr:rwm -v /home/dom:/root-dom:rwm -v /home/tetoeehoward:/root-tetoeehoward:rwm -v /home/wharper:/root-wharper:rwm -a admin:hub-node-api-2024 -a tappedin:tappedin-uploads-2024 -a dom:composr-import-2024 -a devinecr:devinecreat-files-2024 -a tetoeehoward:tetoee-files-2024 -a wharper:walter-files-2024 -a audioportrait:audio-portrait-api-2025 -a composer:composr-manage-2025 -a wordpress:wp-manage-2025 -a public:public-download-2025:r --doctitle 'CopyParty Complete File Management' -lo ./logs/copyparty.txt --hist 100 --th-covers 1920x1080 --ih --no-robots --dotpart --hardlink --stats
+
+[36mcopyparty v1.19.11 "[35musernames[36m" (2025-09-20)
+  CPython v3.13.7 on Linux64  [90m[GCC 11.4.0][0;36m
+   sqlite 3.50.4*1 | jinja 2.11.3 | pyftpd 1.5.10 | tftp 0.4.0
+[0m
+[+] opened logfile [./logs/copyparty.txt]
+2025-11-27
+15:25:03.156 root                   LOG: opening sessions-db /root/.config/copyparty/sessions.db
+15:25:03.176 auth                  CRIT: account [admin] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [tappedin] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [dom] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [devinecr] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [tetoeehoward] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [wharper] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [audioportrait] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [composer] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [wordpress] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.176 auth                  CRIT: account [public] is not mentioned in any volume definitions; see --help-accounts
+15:25:03.195 auth                   LOG: volumes and permissions:
+
+"/shared"  /home/devinecr/shared
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/apps-dom"  /home/dom/apps
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/root-dom"  /home/dom
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/hubnode-api"  /home/devinecr/apps/hubnode/api
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/root-wharper"  /home/wharper
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/apps-tappedin"  /home/tappedin/apps
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/apps-devinecr"  /home/devinecr/apps
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/root-tappedin"  /home/tappedin
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/root-devinecr"  /home/devinecr
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/whmcs-devinecr"  /home/devinecr/public_html
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/hubnode-clients"  /home/devinecr/apps/hubnode/clients
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/hubnode-backend"  /home/devinecr/apps/hubnode/backend
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/incoming-tappedin"  /home/tappedin/public_html/wp-content/uploads/incoming
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/root-tetoeehoward"  /home/tetoeehoward
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/audio-portrait-dev"  /home/tappedin/apps/audio-portrait
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/downloads-devinecr"  /home/devinecr/downloads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/Downloads-devinecr"  /home/devinecr/Downloads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/audio-portrait-dist"  /home/devinecr/apps/hubnode/api/audio-portrait/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/attachments-devinecr"  /home/devinecr/attachments
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/Attachments-devinecr"  /home/devinecr/Attachments
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/incoming-raywonderis"  /home/dom/public_html/uploads/incoming
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/incoming-devinecreations"  /home/devinecr/devinecreations.net/uploads/incoming
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/wp-tappedin/uploads"  /home/tappedin/public_html/wp-content/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/wp-tappedin/podcast-submissions"  /home/tappedin/public_html/wp-content/uploads/podcast-submissions
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/wp-tetoeehoward/uploads"  /home/tetoeehoward/public_html/wp-content/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/wp-walterharper/uploads"  /home/wharper/public_html/wp-content/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/uploads"  /home/dom/public_html/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/filedump"  /home/dom/public_html/uploads/filedump
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/galleries"  /home/dom/public_html/uploads/galleries
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/attachments"  /home/dom/public_html/uploads/attachments
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/website_specific"  /home/dom/public_html/uploads/website_specific
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/website_specific/apps"  /home/dom/public_html/uploads/website_specific/apps
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-raywonderis/apps/audio-portrait"  /home/dom/public_html/uploads/website_specific/apps/audio-portrait
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/uploads"  /home/devinecr/devinecreations.net/uploads
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/filedump"  /home/devinecr/devinecreations.net/uploads/filedump
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/galleries"  /home/devinecr/devinecreations.net/uploads/galleries
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/attachments"  /home/devinecr/devinecreations.net/uploads/attachments
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/website_specific"  /home/devinecr/devinecreations.net/uploads/website_specific
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/website_specific/apps"  /home/devinecr/devinecreations.net/uploads/website_specific/apps
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+"/composr-devinecreations/apps/audio-portrait"  /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait
+|    read:  everybody
+|   write:  everybody
+|    move:  everybody
+|  delete:  --none--
+|    dots:  --none--
+|     get:  --none--
+|   upGet:  --none--
+|    html:  --none--
+|  uadmin:  --none--
+
+15:25:03.195 auth                   BTW: hint: enable searching and upload-undo with argument -e2dsa
+15:25:03.199 root                   LOG: max clients: 1024
+15:25:03.208 tcpsrv                 LOG: available @  http://127.0.0.1:3923/  (1-lo)
+15:25:03.208 tcpsrv                 LOG: available @  http://[::1]:3923/  (1-lo)
+15:25:03.208 tcpsrv                 LOG: available @  http://172.22.0.1:3923/  (10-br-13c7437d1b90)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::42:4dff:fe7c:4238]:3923/  (10-br-13c7437d1b90)
+15:25:03.208 tcpsrv                 LOG: available @  http://172.17.0.1:3923/  (11-docker0)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::2410:59ff:feea:c914]:3923/  (1329-veth95fd1cc)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::c4fd:c2ff:fe45:139b]:3923/  (1331-vetheaa14c6)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::cc66:4dff:fea0:c791]:3923/  (1333-vethe386cc1)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::80bc:6aff:fe6b:3438]:3923/  (1337-vethccacca6)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::44d5:21ff:fe2f:43bd]:3923/  (1339-vethf4d5540)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::f0cc:21ff:fe03:f252]:3923/  (1345-vethf673828)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::4427:6ff:feeb:1293]:3923/  (1347-vethafe6a74)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::901e:1dff:fe49:6521]:3923/  (1349-vethb569b3f)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::ac60:10ff:fe49:f79a]:3923/  (1351-veth37c882e)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::7018:38ff:fedf:d3d]:3923/  (1357-vethbb6eadc)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::70e8:2bff:fed7:61fd]:3923/  (1361-veth22d7a1b)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::cc4:aff:fe1f:5a7a]:3923/  (1365-veth2a4806d)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::d872:2dff:fe35:1fd7]:3923/  (1367-vetha9a3972)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::44ab:fbff:fe10:fd2c]:3923/  (1369-veth40dae3a)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::8845:caff:febd:c433]:3923/  (1371-veth703527e)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::b036:7eff:fedf:1067]:3923/  (1379-veth8c0c3a4)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::6447:35ff:fef6:eaba]:3923/  (1381-vethb0bd509)
+15:25:03.208 tcpsrv                 LOG: available @  http://64.20.46.182:3923/  (5-enp43s0f1)
+15:25:03.208 tcpsrv                 LOG: available @  http://64.20.46.179:3923/  (5-enp43s0f1)
+15:25:03.208 tcpsrv                 LOG: available @  http://64.20.46.180:3923/  (5-enp43s0f1)
+15:25:03.208 tcpsrv                 LOG: available @  http://64.20.46.181:3923/  (5-enp43s0f1)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::b696:91ff:fe4e:f3be]:3923/  (5-enp43s0f1, external)
+15:25:03.208 tcpsrv                 LOG: available @  http://64.20.46.178:3923/  (6-enp3s0f0u14u2c2, external)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::a4a5:e5ff:fece:5325]:3923/  (6-enp3s0f0u14u2c2, external)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::b40a:3af1:9843:b7fe]:3923/  (7-tailscale0)
+15:25:03.208 tcpsrv                 LOG: available @  http://172.20.0.1:3923/  (8-br-e8836e858994)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::42:fff:fedc:efec]:3923/  (8-br-e8836e858994)
+15:25:03.208 tcpsrv                 LOG: available @  http://172.18.0.1:3923/  (9-br-13521e585133)
+15:25:03.208 tcpsrv                 LOG: available @  http://[fe80::42:7cff:fe45:eb67]:3923/  (9-br-13521e585133)
+15:25:03.209 optional-dependencies  BTW: OK: sqlite, ffmpeg, ffprobe, NG: pillow, vips, pillow-webp, mutagen, argon2, pyzmq, pillow-heif, pillow-avif, rawpy, see --deps (this is fine btw)
+15:25:03.209 thumb                  LOG: decoder preference: ff
+15:25:03.211 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/y (/home/devinecr/shared)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/yz (/home/dom/apps)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/f (/home/dom)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/yk (/home/devinecr/apps/hubnode/api)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/r (/home/wharper)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/ea (/home/tappedin/apps)/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/vh/[A
+15:25:03.212 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/yo (/home/tappedin)/[A
+15:25:03.213 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/h/[A
+15:25:03.213 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/2 (/home/devinecr/public_html)/[A
+15:25:03.213 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/4 (/home/devinecr/apps/hubnode/clients)/[A
+15:25:03.213 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/b/[A
+15:25:03.217 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/q (/home/tappedin/public_html/wp-content/uploads/incoming)/[A
+15:25:03.217 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/er (/home/tetoeehoward)/[A
+15:25:03.217 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/z (/home/tappedin/apps/audio-portrait)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/l (/home/devinecr/downloads)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/3q (/home/devinecr/Downloads)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/u (/home/devinecr/apps/hubnode/api/audio-portrait/uploads)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/x (/home/devinecr/attachments)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/73 (/home/devinecr/Attachments)/[A
+15:25:03.218 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/kb (/home/dom/public_html/uploads/incoming)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/p (/home/devinecr/devinecreations.net/uploads/incoming)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/h2 (/home/tappedin/public_html/wp-content/uploads)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/v (/home/tappedin/public_html/wp-content/uploads/podcast-submissions)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/az (/home/tetoeehoward/public_html/wp-content/uploads)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/7 (/home/wharper/public_html/wp-content/uploads)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/o (/home/dom/public_html/uploads)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/m (/home/dom/public_html/uploads/filedump)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/ed (/home/dom/public_html/uploads/galleries)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/re (/home/dom/public_html/uploads/attachments)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/px (/home/dom/public_html/uploads/website_specific)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/au (/home/dom/public_html/uploads/website_specific/apps)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/jk (/home/dom/public_html/uploads/website_specific/apps/audio-portrait)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/bz (/home/devinecr/devinecreations.net/uploads)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/k3 (/home/devinecr/devinecreations.net/uploads/filedump)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/ud (/home/devinecr/devinecreations.net/uploads/galleries)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/zi (/home/devinecr/devinecreations.net/uploads/attachments)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/t (/home/devinecr/devinecreations.net/uploads/website_specific)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/pq (/home/devinecr/devinecreations.net/uploads/website_specific/apps)/[A
+15:25:03.219 thumb                  LOG: e/devinecr/apps/hubnode/backend/100/y6 (/home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait)/[A
+15:25:03.219 thumb                  LOG:  0 dirs
+15:25:03.402 tcpsrv                 LOG: listening @ 0.0.0.0:3923  f3 p3062112
+15:25:03.402 hsrv                   LOG: subscribed @ 0.0.0.0:3923  f3 p3062112
+15:25:03.402 root                   LOG: workers OK
+
+15:25:03.403 cert                  WARN: could not create TLS certificates: [Errno 2] No such file or directory: 'cfssl-certinfo'
+15:25:03.403 cert                   BTW: install cfssl if you want to fix this; https://github.com/cloudflare/cfssl/releases/latest  (cfssl, cfssljson, cfssl-certinfo)
+15:25:03.403 up2k                   LOG: /shared/ casechk:n
+15:25:03.403 up2k                   LOG: /apps-dom/ casechk:n
+15:25:03.403 up2k                   LOG: /root-dom/ casechk:n
+15:25:03.404 up2k                   LOG: /hubnode-api/ casechk:n
+15:25:03.404 up2k                   LOG: /root-wharper/ casechk:n
+15:25:03.404 up2k                   LOG: /apps-tappedin/ casechk:n
+15:25:03.404 up2k                   LOG: /apps-devinecr/ casechk:n
+15:25:03.404 up2k                   LOG: /root-tappedin/ casechk:n
+15:25:03.404 up2k                   LOG: /root-devinecr/ casechk:n
+15:25:03.405 up2k                   LOG: /whmcs-devinecr/ casechk:n
+15:25:03.405 up2k                   LOG: /hubnode-clients/ casechk:n
+15:25:03.405 up2k                   LOG: /hubnode-backend/ casechk:n
+15:25:03.405 up2k                   LOG: /incoming-tappedin/ casechk:n
+15:25:03.405 up2k                   LOG: /root-tetoeehoward/ casechk:n
+15:25:03.405 up2k                   LOG: /audio-portrait-dev/ casechk:n
+15:25:03.405 up2k                   LOG: /downloads-devinecr/ casechk:n
+15:25:03.405 up2k                   LOG: /Downloads-devinecr/ casechk:n
+15:25:03.405 up2k                   LOG: /audio-portrait-dist/ casechk:n
+15:25:03.406 up2k                   LOG: /attachments-devinecr/ casechk:n
+15:25:03.406 up2k                   LOG: /Attachments-devinecr/ casechk:n
+15:25:03.406 up2k                   LOG: /incoming-raywonderis/ casechk:n
+15:25:03.406 up2k                   LOG: /incoming-devinecreations/ casechk:n
+15:25:03.406 up2k                   LOG: /wp-tappedin/uploads/ casechk:n
+15:25:03.406 up2k                   LOG: /wp-tappedin/podcast-submissions/ casechk:n
+15:25:03.406 up2k                   LOG: /wp-tetoeehoward/uploads/ casechk:n
+15:25:03.407 up2k                   LOG: /wp-walterharper/uploads/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/uploads/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/filedump/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/galleries/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/attachments/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/website_specific/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/website_specific/apps/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-raywonderis/apps/audio-portrait/ casechk:n
+15:25:03.407 up2k                   LOG: /composr-devinecreations/uploads/ casechk:n
+15:25:03.408 up2k                   LOG: /composr-devinecreations/filedump/ casechk:n
+15:25:03.408 up2k                   LOG: /composr-devinecreations/galleries/ casechk:n
+15:25:03.408 up2k                   LOG: /composr-devinecreations/attachments/ casechk:n
+15:25:03.408 up2k                   LOG: /composr-devinecreations/website_specific/ casechk:n
+15:25:03.408 up2k                   LOG: /composr-devinecreations/website_specific/apps/ casechk:n
+15:25:03.408 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/audio-portrait-mac-build-complete.tar.gz
+15:25:03.408 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/Audio-Portrait-0.1.0-intel.dmg
+15:25:03.408 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/audio-portrait-mac-build-files.tar.gz
+15:25:03.409 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/Audio-Portrait-0.1.0-arm64.dmg
+15:25:03.409 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/Audio-Portrait-Portable-0.1.0.exe
+15:25:03.409 scandir                BTW: [s] FileNotFoundError(2, 'No such file or directory') @ /home/devinecr/devinecreations.net/uploads/website_specific/apps/audio-portrait/Audio Portrait 0.1.0.exe
+15:25:03.409 up2k                   LOG: /composr-devinecreations/apps/audio-portrait/ casechk:n
+15:25:03.409 up2k                   LOG: 0 volumes in 0.01 sec
+15:25:12.751 127.0.0.1 44812        LOG: GET  /metrics @*
+15:25:12.751 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:26:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:26:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:27:12.749 127.0.0.1 44812        LOG: GET  /metrics @*
+15:27:12.749 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:28:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:28:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:29:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:29:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:30:12.749 127.0.0.1 44812        LOG: GET  /metrics @*
+15:30:12.749 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:30:21.956 127.0.0.1 33884        LOG: GET  / @*
+15:31:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:31:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:32:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:32:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:33:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:33:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:34:12.749 127.0.0.1 44812        LOG: GET  /metrics @*
+15:34:12.749 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:35:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:35:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:36:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:36:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:37:12.750 127.0.0.1 44812        LOG: GET  /metrics @*
+15:37:12.750 127.0.0.1 44812        LOG: @* has no access to '/metrics'
+15:38:00.835 hsrv                   LOG: ok bye
+15:38:00.835 tcpsrv                 LOG: ok bye
+15:38:00.835 up2k                   LOG: writing snapshot
+15:38:00.886 root                   LOG: nailed it

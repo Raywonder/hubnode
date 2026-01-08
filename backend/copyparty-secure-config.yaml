@@ -1,0 +1,93 @@
+# CopyParty Secure Configuration
+# This configuration restricts guest access and implements proper authentication
+
+# Server settings
+listen:
+  - ip: "0.0.0.0"
+    port: 3923
+    ssl: false
+
+# Admin user configuration
+accounts:
+  admin:
+    # Replace with actual password hash: python3 -c "import hashlib; print(hashlib.sha256('your_password'.encode()).hexdigest())"
+    password: "b65c1fdbed2f2c762423981525735887fb8efb40b72c2928efaf48256c5bb67b"
+    flags: "a"  # admin flag
+
+  guest:
+    password: ""  # No password for guest
+    flags: "r"   # read-only flag
+
+# Volume mappings with restricted access
+volumes:
+  # Public uploads - accessible to guests
+  "/uploads":
+    src: "/home/dom/public_html/uploads"
+    flags: "r"
+    access:
+      "*": "r"  # All users can read
+      "admin": "rw"  # Admin can read/write
+
+  # Admin-only home directories
+  "/admin/dom-home":
+    src: "/home/dom"
+    flags: "r"
+    access:
+      "admin": "rw"  # Only admin access
+
+  "/admin/devinecr":
+    src: "/home/devinecr"
+    flags: "r"
+    access:
+      "admin": "rw"  # Only admin access
+
+  # Public web content
+  "/web":
+    src: "/var/www/html"
+    flags: "r"
+    access:
+      "*": "r"  # All users can read
+      "admin": "rw"
+
+  # Apps directory with restricted access
+  "/apps":
+    src: "/home/dom/public_html/apps"
+    flags: "r"
+    access:
+      "*": "r"  # Public read access to apps
+      "admin": "rw"
+
+# Security settings
+security:
+  # Hide server information
+  hide_version: true
+
+  # Prevent directory traversal
+  no_dot_folders: true
+
+  # Rate limiting
+  rate_limit:
+    requests_per_minute: 60
+
+  # File upload restrictions for guests
+  upload_filters:
+    - "*.exe"
+    - "*.bat"
+    - "*.sh"
+    - "*.cmd"
+
+# Logging
+log:
+  access: "/var/log/copyparty-access.log"
+  error: "/var/log/copyparty-error.log"
+
+# CORS settings for web integration
+cors:
+  origins:
+    - "https://raywonderis.me"
+    - "https://*.raywonderis.me"
+
+# TLS/SSL configuration (when enabled)
+tls:
+  cert: "/etc/ssl/certs/raywonderis.me.crt"
+  key: "/etc/ssl/private/raywonderis.me.key"

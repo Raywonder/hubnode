@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Manager API Documentation</title>
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="/static/docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn">← Back to API Dashboard</a>
+
+        <div class="header">
+            <h1>⚙️ Services Manager API</h1>
+            <p>Auto-generated API Reference</p>
+        </div>
+
+        <div class="update-info">
+            🔄 Last updated: 2025-10-19 23:28:01 UTC<br>
+            Auto-refreshes every 5 minutes • Updates every 1 minute
+        </div>
+
+        <div class="card">
+            <h2>Base URLs</h2>
+            <ul style="margin-left: 20px; color: #666;">
+                <li><code>https://api.devinecreations.net/api/services</code></li>
+                <li><code>https://api.devine-creations.com/api/services</code></li>
+                <li><code>https://api.tetoeehoward.com/api/services</code></li>
+                <li><code>https://api.tappedin.fm/api/services</code></li>
+            </ul>
+
+            <h2>System Service Control</h2>
+            <p>Docker container management, Jellyfin, Icecast, TeamTalk servers, and permission fixes.</p>
+        </div>
+
+        <div class="card">
+            <h2>Available Endpoints</h2>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Root endpoint
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/copyparty/admin</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get CopyParty admin access info (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/copyparty/instances</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List CopyParty instances
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/docker/containers/<container_name>/logs</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get Docker container logs
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/docker/containers/<container_name>/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart a Docker container (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/docker/containers/<container_name>/start</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Start a Docker container (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/docker/containers/<container_name>/stats</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get Docker container stats
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/docker/containers/<container_name>/stop</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Stop a Docker container (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/docker/containers/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all Docker containers
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/docker/system/prune</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Clean up Docker system (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/fix-permissions/<username></span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Fix file permissions for user's home directory
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/fix-permissions/composr</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Fix Composr installation permissions (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/health</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> API health check
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/icecast/<username>/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart Icecast for specific user
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/icecast/<username>/status</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get Icecast status for specific user
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/icecast/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all Icecast instances
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/info</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> API information
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/jellyfin/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart Jellyfin server (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/jellyfin/status</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get Jellyfin server status
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart the Services Manager API service (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/system/status</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get overall system status
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/teamtalk/commands</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get available TeamTalk commands
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/teamtalk/servers/<server_name>/logs</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get TeamTalk server logs
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/teamtalk/servers/<server_name>/restart</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Restart TeamTalk server (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/teamtalk/servers/<server_name>/start</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Start TeamTalk server (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/teamtalk/servers/<server_name>/status</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Get TeamTalk server status
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method post">POST</span>
+                    <span class="path">/api/services/teamtalk/servers/<server_name>/stop</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> Stop TeamTalk server (admin only)
+                </div>
+
+            </div>
+
+            <div class="endpoint">
+                <div>
+                    <span class="method get">GET</span>
+                    <span class="path">/api/services/teamtalk/servers/list</span>
+                </div>
+
+                <div class="description">
+                    <strong>Description:</strong> List all TeamTalk servers
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="text-align: center; color: white; margin-top: 40px; opacity: 0.8;">
+            <p>Auto-generated from services-manager.py</p>
+        </div>
+    </div>
+</body>
+</html>

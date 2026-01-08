@@ -1,0 +1,1 @@
+-i 127.0.0.1 -p 3928 --name DevineCreations-Files -v /home/devinecr/devinecreations.net/uploads:/uploads:rwmG -a devinecr:devinecreat-files-2024:rwm --doctitle DevineCreations-File-Manager --hist 100 --th-covers 1920x1080 --ih --no-robots --dotpart --hardlink --stats --xff-hdr X-Real-IP --rproxy -1 --aclose 0 --loris 0

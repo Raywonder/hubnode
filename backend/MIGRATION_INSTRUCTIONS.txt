@@ -1,0 +1,29 @@
+🔒 COPYPARTY SECURE MIGRATION - IMMEDIATE ACTION REQUIRED
+
+ALL USERS: Stop using port numbers immediately and switch to secure HTTPS domains.
+
+OLD URLS (STOP USING):
+❌ https://64.20.46.178:3923/
+❌ http://64.20.46.178:3923/
+❌ Any URL with :3923 or :3924
+
+NEW SECURE URLS (USE THESE):
+✅ https://files.raywonderis.me/
+✅ https://files.devinecreations.net/
+✅ https://files.tappedin.fm/
+✅ https://files.tetoeehoward.com/
+✅ https://files.walterharper.com/
+
+WEBDAV MOUNTING:
+- Mac: https://files.raywonderis.me/dav/
+- Windows: https://files.raywonderis.me/dav/
+- Linux: https://files.raywonderis.me/dav/
+
+CREDENTIALS UNCHANGED:
+- admin / hub-node-api-2024
+- dom / composr-import-2024
+- tappedin / tappedin-uploads-2024
+- devinecr / devinecreat-files-2024
+- [etc - all passwords same]
+
+Download full config: /home/devinecr/apps/hubnode/backend/COPYPARTY_NEW_CLIENT_CONFIG.md

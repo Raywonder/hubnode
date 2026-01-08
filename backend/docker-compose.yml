@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  copyparty-hub:
+    build: .
+    container_name: copyparty-hub-node
+    ports:
+      - "3923:3923"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./downloads:/app/downloads
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - COPYPARTY_HOST=0.0.0.0
+      - COPYPARTY_PORT=3923
+      - COPYPARTY_NAME=CopyParty Hub Node
+    restart: unless-stopped
+    networks:
+      - copyparty-network
+
+networks:
+  copyparty-network:
+    driver: bridge

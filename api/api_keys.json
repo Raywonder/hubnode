@@ -1,0 +1,18 @@
+{
+  "master": {
+    "key": "gateway-master-d49614811e96a655",
+    "permissions": [
+      "all"
+    ],
+    "description": "Master API key with full access"
+  },
+  "pbx": {
+    "key": "pbx-access-d2fe6ae758b44399",
+    "permissions": [
+      "monitor",
+      "logs",
+      "audio-portrait"
+    ],
+    "description": "FlexPBX and external apps key"
+  }
+}

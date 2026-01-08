@@ -1,0 +1,16 @@
+{
+  "name": "audio-portrait-client-monitor",
+  "version": "0.1.0",
+  "description": "Audio Portrait Client Monitor for HubNode Integration",
+  "main": "monitor.js",
+  "scripts": {
+    "monitor": "node monitor.js",
+    "status": "node monitor.js && cat status.json"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "keywords": ["audio-portrait", "monitoring", "hubnode", "api"],
+  "author": "Devine Creations",
+  "license": "MIT"
+}

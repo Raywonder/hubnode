@@ -1,0 +1,22 @@
+[
+  {
+    "type": "test",
+    "action": "integration_test",
+    "success": true,
+    "data": {
+      "message": "Testing FlexPBX integration"
+    },
+    "timestamp": "2025-10-17T09:33:36.476102"
+  },
+  {
+    "type": "backup",
+    "action": "queued",
+    "success": true,
+    "timestamp": "2025-10-17 13:34:22",
+    "data": {
+      "backup_type": "flx",
+      "request_id": "1760708062_4878",
+      "compressed": true
+    }
+  }
+]
