@@ -52,6 +52,44 @@
   border-bottom: 1px solid var(--border);
 }
 
+.media-server-status {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-tertiary);
+}
+
+.server-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.status-dot {
+  font-size: 12px;
+}
+
+.status-dot.connected {
+  color: #22c55e;
+}
+
+.server-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.server-details {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.setting-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  padding-left: 20px;
+}
+
 .folder-btn, .queue-btn {
   width: 100%;
   padding: 12px 16px;

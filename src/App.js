@@ -26,11 +26,45 @@ function App() {
   const [audioDevices, setAudioDevices] = useState([]);
   const [audioSettings, setAudioSettings] = useState({ defaultDevice: 'default', volume: 0.7 });
   const [streamingUrls, setStreamingUrls] = useState([]);
+  const [mediaServerDetected, setMediaServerDetected] = useState(false);
+  const [mediaServerInfo, setMediaServerInfo] = useState(null);
+  const [enableMediaServerAutoDetect, setEnableMediaServerAutoDetect] = useState(false);
   
   const audioRef = useRef(null);
   const videoRef = useRef(null);
   const progressBarRef = useRef(null);
   const volumeBarRef = useRef(null);
+
+  // Media server autodetection (hidden by default)
+  useEffect(() => {
+    const detectMediaServer = async () => {
+      const defaultServerUrl = 'https://media.raywonderis.me';
+      
+      try {
+        const response = await fetch(`${defaultServerUrl}/System/Info/Public`);
+        const info = await response.json();
+        
+        console.log("Connected to:", info.ServerName);
+        setMediaServerDetected(true);
+        setMediaServerInfo({
+          serverName: info.ServerName,
+          serverUrl: defaultServerUrl,
+          version: info.Version
+        });
+      } catch (err) {
+        console.log("Media server not available - using local mode");
+        setMediaServerDetected(false);
+        setMediaServerInfo(null);
+      }
+    };
+
+    // Only auto-detect if explicitly enabled
+    const autoDetectEnabled = localStorage.getItem('enableMediaServerAutoDetect') === 'true';
+    setEnableMediaServerAutoDetect(autoDetectEnabled);
+    if (autoDetectEnabled) {
+      detectMediaServer();
+    }
+  }, []);
 
   // Load saved preferences
   useEffect(() => {
@@ -417,6 +451,36 @@ function App() {
     }
   };
 
+  const toggleMediaServerAutoDetect = async (enabled) => {
+    setEnableMediaServerAutoDetect(enabled);
+    localStorage.setItem('enableMediaServerAutoDetect', enabled.toString());
+    
+    if (enabled) {
+      // Trigger detection immediately
+      const defaultServerUrl = 'https://media.raywonderis.me';
+      try {
+        const response = await fetch(`${defaultServerUrl}/System/Info/Public`);
+        const info = await response.json();
+        
+        console.log("Connected to:", info.ServerName);
+        setMediaServerDetected(true);
+        setMediaServerInfo({
+          serverName: info.ServerName,
+          serverUrl: defaultServerUrl,
+          version: info.Version
+        });
+      } catch (err) {
+        console.log("Media server not available - using local mode");
+        setMediaServerDetected(false);
+        setMediaServerInfo(null);
+      }
+    } else {
+      // Disable and clear connection
+      setMediaServerDetected(false);
+      setMediaServerInfo(null);
+    }
+  };
+
   const formatTime = (seconds) => {
     if (!seconds || isNaN(seconds)) return '0:00';
     const minutes = Math.floor(seconds / 60);
@@ -460,6 +524,18 @@ function App() {
               📜 Queue ({musicFiles.length})
             </button>
           </div>
+
+          {mediaServerDetected && mediaServerInfo && (
+            <div className="media-server-status">
+              <div className="server-indicator">
+                <span className="status-dot connected">●</span>
+                <span className="server-name">{mediaServerInfo.serverName}</span>
+              </div>
+              <div className="server-details">
+                Connected to media server
+              </div>
+            </div>
+          )}
 
           {showQueue && (
             <div className="queue">
@@ -912,6 +988,7 @@ function App() {
   function AudioSettingsModal() {
     const [selectedDevice, setSelectedDevice] = useState(audioSettings.defaultDevice);
     const [defaultVolume, setDefaultVolume] = useState(audioSettings.volume || 0.7);
+    const [mediaServerEnabled, setMediaServerEnabled] = useState(enableMediaServerAutoDetect);
     const [saving, setSaving] = useState(false);
 
     const handleSave = async () => {
@@ -922,6 +999,11 @@ function App() {
       };
       
       const result = await saveAudioSettings(newSettings);
+      
+      // Save media server setting
+      if (mediaServerEnabled !== enableMediaServerAutoDetect) {
+        await toggleMediaServerAutoDetect(mediaServerEnabled);
+      }
       
       if (result.success) {
         setShowAudioSettings(false);
@@ -969,6 +1051,20 @@ function App() {
                   onChange={(e) => setDefaultVolume(parseFloat(e.target.value))}
                   className="volume-slider"
                 />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={mediaServerEnabled}
+                  onChange={(e) => setMediaServerEnabled(e.target.checked)}
+                />
+                Enable Media Server Auto-Detection
+              </label>
+              <div className="setting-description">
+                Automatically detect and connect to media.raywonderis.me on startup
               </div>
             </div>
 

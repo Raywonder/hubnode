@@ -6,10 +6,13 @@
   "scripts": {
     "start": "electron .",
     "dev": "concurrently \"npm run dev-react\" \"wait-on http://localhost:3000 && electron .\"",
-    "dev-react": "react-scripts start",
+    "dev-react": "set NODE_OPTIONS=--no-deprecation && react-scripts start",
     "build": "react-scripts build",
     "pack": "electron-builder",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+    "build-win": "npm run build && electron-builder --win",
+    "build-mac": "npm run build && electron-builder --mac",
+    "build-all": "npm run build && electron-builder --win --mac"
   },
   "keywords": [
     "electron",
@@ -35,7 +38,7 @@
     "music-metadata": "^8.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "semver": "^7.7.2"
   },
   "browserslist": {
@@ -49,5 +52,39 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "build": {
+    "appId": "com.yourcompany.mediaplayer",
+    "productName": "Media Player",
+    "directories": {
+      "output": "builds"
+    },
+    "files": [
+      "build/**/*",
+      "main.js",
+      "preload.js",
+      "node_modules/**/*"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/favicon.ico"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "public.app-category.music"
+    }
   }
 }
