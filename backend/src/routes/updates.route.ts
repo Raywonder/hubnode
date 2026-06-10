@@ -11,6 +11,107 @@ const clientService = new ClientService();
  * Handles software update pushes and client registration
  */
 
+// List configured applications available through update APIs
+router.get('/apps', async (_req: Request, res: Response) => {
+  try {
+    const apps = await updateService.listConfiguredApps();
+    res.json({
+      success: true,
+      apps,
+      count: apps.length
+    });
+  } catch (error) {
+    console.error('List update apps error:', error);
+    return res.status(500).json({
+      error: 'Failed to list update apps',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// App-scoped update check endpoint: /api/updates/:appId/check
+router.post('/:appId/check', async (req: Request, res: Response) => {
+  try {
+    const { appId } = req.params;
+    const {
+      clientId,
+      currentVersion,
+      platform,
+      arch,
+      userId
+    } = req.body;
+
+    if (!currentVersion) {
+      return res.status(400).json({
+        error: 'Missing required field: currentVersion'
+      });
+    }
+
+    const configuredApp = await updateService.resolveConfiguredApp(appId);
+    if (!configuredApp) {
+      return res.status(404).json({
+        error: `Unknown application: ${appId}`
+      });
+    }
+
+    const safeClientId = clientId || `anonymous-${configuredApp.id}`;
+    await clientService.updateLastSeen(safeClientId);
+
+    const updateInfo = await updateService.checkForAppUpdates(configuredApp.id, {
+      clientId: safeClientId,
+      currentVersion,
+      platform: platform || 'unknown',
+      arch: arch || 'unknown',
+      userId
+    });
+
+    res.json({
+      appId: configuredApp.id,
+      application: configuredApp.application,
+      ...updateInfo
+    });
+  } catch (error) {
+    console.error('App-scoped update check error:', error);
+    return res.status(500).json({
+      error: 'Failed to check app update',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// App-scoped update feed endpoint: /api/updates/:appId/feed
+router.get('/:appId/feed', async (req: Request, res: Response) => {
+  try {
+    const { appId } = req.params;
+    const { platform, arch } = req.query;
+
+    const configuredApp = await updateService.resolveConfiguredApp(appId);
+    if (!configuredApp) {
+      return res.status(404).json({
+        error: `Unknown application: ${appId}`
+      });
+    }
+
+    const feed = await updateService.getUpdateFeed({
+      application: configuredApp.application,
+      platform: (platform as string) || 'unknown',
+      arch: (arch as string) || 'unknown'
+    });
+
+    res.json({
+      appId: configuredApp.id,
+      application: configuredApp.application,
+      ...feed
+    });
+  } catch (error) {
+    console.error('App-scoped update feed error:', error);
+    return res.status(500).json({
+      error: 'Failed to get app update feed',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 // Register a client application
 router.post('/clients/register', async (req: Request, res: Response) => {
   try {

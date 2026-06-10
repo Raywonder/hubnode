@@ -6,12 +6,16 @@
     "endpoints": {
       "health": "/health",
       "all_services": "/status",
+      "api_services": "/status/api",
       "systemd_services": "/status/systemd",
       "port_services": "/status/ports",
       "copyparty": "/status/copyparty",
-      "specific_service": "/service/{service_name}"
+      "backend_services": "/status/backend",
+      "specific_service": "/service/{service_name}",
+      "voicelink_plugin_manifest": "/integrations/plugins/voicelink",
+      "voicelink_test_notify": "/notify/voicelink/test"
     },
-    "description": "Service Monitor API for monitoring all critical services",
+    "description": "Service Monitor API for monitoring all critical services, AI backends, OpenLink, VoiceLink, OpenClaw gateway, auth, and PM2 services",
     "location": "/home/devinecr/apps/hubnode/clients/api_monitor"
   },
   "headscale_api": {
@@ -59,6 +63,14 @@
     "auth_required": true,
     "supported_platforms": ["windows", "mac", "gui"]
   },
-  "updated": "2026-01-03T17:00:00Z",
-  "version": "2.0.0"
+  "voicelink_clawx_plugin": {
+    "config_file": "/home/devinecr/apps/hubnode/config/clawx-voicelink-plugin.json",
+    "compatible_clients": [
+      "clawx",
+      "openclaw"
+    ],
+    "description": "VoiceLink admin alert plugin metadata for ClawX/OpenClaw"
+  },
+  "updated": "2026-03-08T18:00:00Z",
+  "version": "2.1.0"
 }

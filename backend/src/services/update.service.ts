@@ -22,6 +22,19 @@ interface UpdateInfo {
   forceUpdate?: boolean;
 }
 
+interface UpdateAppConfig {
+  id: string;
+  application: string;
+  displayName?: string;
+  enabled?: boolean;
+  aliases?: string[];
+  docsUrl?: string;
+}
+
+interface UpdateAppRegistry {
+  apps: Record<string, Omit<UpdateAppConfig, 'id'>>;
+}
+
 interface UpdateFeedRequest {
   application: string;
   platform: string;
@@ -53,10 +66,16 @@ interface BroadcastUpdateRequest {
 class UpdateService {
   private updatesPath: string;
   private configPath: string;
+  private updateAppConfigCandidates: string[];
 
   constructor() {
     this.updatesPath = path.join(process.cwd(), 'storage', 'updates');
     this.configPath = path.join(process.cwd(), 'storage', 'config');
+    this.updateAppConfigCandidates = [
+      path.join(process.cwd(), 'config', 'update-apps.json'),
+      path.join(process.cwd(), '..', 'config', 'update-apps.json'),
+      path.join(this.configPath, 'update-apps.json')
+    ];
     this.ensureDirectories();
   }
 
@@ -112,6 +131,57 @@ class UpdateService {
         updateAvailable: false
       };
     }
+  }
+
+  async checkForAppUpdates(
+    appId: string,
+    request: Omit<UpdateCheckRequest, 'application'>
+  ): Promise<UpdateInfo> {
+    const resolvedApp = await this.resolveConfiguredApp(appId);
+    if (!resolvedApp) {
+      return { updateAvailable: false };
+    }
+
+    return this.checkForUpdates({
+      ...request,
+      application: resolvedApp.application
+    });
+  }
+
+  async listConfiguredApps(): Promise<UpdateAppConfig[]> {
+    const registry = await this.loadAppRegistry();
+    return Object.entries(registry.apps)
+      .map(([id, app]) => ({ id, ...app }))
+      .filter((app) => app.enabled !== false);
+  }
+
+  async resolveConfiguredApp(appIdOrAlias: string): Promise<UpdateAppConfig | null> {
+    if (!appIdOrAlias) {
+      return null;
+    }
+
+    const normalized = appIdOrAlias.trim().toLowerCase();
+    const registry = await this.loadAppRegistry();
+    const configuredApps = Object.entries(registry.apps).map(([id, app]) => ({
+      id,
+      ...app
+    }));
+
+    for (const app of configuredApps) {
+      if (app.enabled === false) {
+        continue;
+      }
+
+      if (app.id.toLowerCase() === normalized || app.application.toLowerCase() === normalized) {
+        return app;
+      }
+
+      if (app.aliases && app.aliases.some((alias) => alias.toLowerCase() === normalized)) {
+        return app;
+      }
+    }
+
+    return null;
   }
 
   async getUpdateFeed(request: UpdateFeedRequest): Promise<any> {
@@ -339,6 +409,98 @@ class UpdateService {
     } catch (error) {
       console.error('Failed to log update push:', error);
     }
+  }
+
+  private async loadAppRegistry(): Promise<UpdateAppRegistry> {
+    for (const candidate of this.updateAppConfigCandidates) {
+      try {
+        const content = await fs.readFile(candidate, 'utf-8');
+        const parsed = JSON.parse(content) as UpdateAppRegistry;
+        if (parsed?.apps && Object.keys(parsed.apps).length > 0) {
+          return parsed;
+        }
+      } catch {
+        // Try next location.
+      }
+    }
+
+    // Fallback defaults keep update endpoints functional without local config.
+    return {
+      apps: {
+        bema: {
+          application: 'bema',
+          displayName: 'Bema',
+          aliases: ['bema-app', 'bema-client'],
+          enabled: true
+        },
+        'thrive-messenger': {
+          application: 'thrive-messenger',
+          displayName: 'Thrive Messenger',
+          aliases: ['thrivemessenger', 'thrive', 'thrive-mac'],
+          enabled: true
+        },
+        'thrive-repos': {
+          application: 'thrive-repos',
+          displayName: 'Thrive Repos',
+          aliases: ['thrive-repo', 'thrive-server-repos'],
+          enabled: true
+        },
+        'thrive-api': {
+          application: 'thrive-api',
+          displayName: 'Thrive API',
+          aliases: ['thrive-server', 'thrive-backend'],
+          enabled: true
+        },
+        voicelink: {
+          application: 'voicelink',
+          displayName: 'VoiceLink',
+          aliases: ['voice-link'],
+          enabled: true
+        },
+        'fast-gh': {
+          application: 'fast-gh',
+          displayName: 'FastGH',
+          aliases: ['fastgh', 'fast_gh'],
+          enabled: true
+        },
+        clawx: {
+          application: 'clawx',
+          displayName: 'ClawX',
+          aliases: ['openclaw', 'claw-x'],
+          enabled: true
+        },
+        openclaw: {
+          application: 'openclaw',
+          displayName: 'OpenClaw',
+          aliases: ['open-claw', 'claw'],
+          enabled: true
+        },
+        openlink: {
+          application: 'openlink',
+          displayName: 'OpenLink',
+          aliases: ['open-link'],
+          enabled: true
+        },
+        hubnode: {
+          application: 'hubnode',
+          displayName: 'HubNode',
+          aliases: ['hub-node'],
+          enabled: true
+        },
+        patchmate: {
+          application: 'patchmate',
+          displayName: 'PatchMate',
+          aliases: ['patch-mate'],
+          enabled: true
+        },
+        'audio-portrait': {
+          application: 'audio-portrait',
+          displayName: 'Audio Portrait',
+          aliases: ['audioportrait', 'audio_portrait'],
+          enabled: true
+        }
+      }
+    };
   }
 }
 

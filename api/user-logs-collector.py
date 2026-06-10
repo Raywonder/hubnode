@@ -268,6 +268,6 @@ def health_check():
         "version": "1.0.0"
     })
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     init_database()
-    app.run(host='127.0.0.1', port=5002, debug=False)
+    app.run(host="127.0.0.1", port=5002, debug=False)

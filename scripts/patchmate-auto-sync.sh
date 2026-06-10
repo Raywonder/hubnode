@@ -1,7 +1,7 @@
 #!/bin/bash
 # PatchMate Auto-Sync Script
 # Automatically syncs PatchMate repository with Matthew Whitaker's GitHub repo
-# Runs every 5 minutes via cron job
+# Runs hourly via cron job - only syncs if changes detected
 
 set -e
 

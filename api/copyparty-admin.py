@@ -1428,8 +1428,7 @@ def index():
     """API documentation"""
     return get_info()
 
-if __name__ == '__main__':
-    # Initialize databases
+if __name__ == "__main__":
     init_shares_database()
 
     logger.info("="*60)
@@ -1450,4 +1449,4 @@ if __name__ == '__main__':
     logger.info("  - No authentication required for public shares")
     logger.info("="*60)
 
-    app.run(host='0.0.0.0', port=API_PORT, debug=False)
+    app.run(host="0.0.0.0", port=API_PORT, debug=False)
